@@ -61,4 +61,45 @@
       font-size: 1rem;
     }
   }
+  @media (max-width: 480px) {
+    .produtos-hero {
+      padding: 1.5rem 0.2rem 1rem 0.2rem;
+    }
+    .produtos-hero h1 {
+      font-size: 1.1rem;
+    }
+    .produtos-hero p {
+      font-size: 0.95rem;
+    }
+    .produtos-lista {
+      margin-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    .produtos-grid {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .produto-item {
+      padding: 0.7rem 0.3rem;
+      font-size: 0.95rem;
+    }
+    .produto-item h2 {
+      font-size: 1.1rem;
+    }
+    .produto-item p {
+      font-size: 0.95rem;
+    }
+  }
+  @media (max-width: 360px) {
+    .produtos-hero h1 {
+      font-size: 0.9rem;
+    }
+    .produto-item h2 {
+      font-size: 0.95rem;
+    }
+    .produto-item p {
+      font-size: 0.85rem;
+    }
+  }
   

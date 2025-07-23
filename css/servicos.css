@@ -61,4 +61,45 @@
       font-size: 1rem;
     }
   }
+  @media (max-width: 480px) {
+    .servicos-hero {
+      padding: 1.5rem 0.2rem 1rem 0.2rem;
+    }
+    .servicos-hero h1 {
+      font-size: 1.1rem;
+    }
+    .servicos-hero p {
+      font-size: 0.95rem;
+    }
+    .servicos-lista {
+      margin-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    .servicos-grid {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .servico-item {
+      padding: 0.7rem 0.3rem;
+      font-size: 0.95rem;
+    }
+    .servico-item h2 {
+      font-size: 1.1rem;
+    }
+    .servico-item p {
+      font-size: 0.95rem;
+    }
+  }
+  @media (max-width: 360px) {
+    .servicos-hero h1 {
+      font-size: 0.9rem;
+    }
+    .servico-item h2 {
+      font-size: 0.95rem;
+    }
+    .servico-item p {
+      font-size: 0.85rem;
+    }
+  }
   

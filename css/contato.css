@@ -81,4 +81,51 @@
       padding: 0 0.1rem;
     }
   }
+  @media (max-width: 480px) {
+    .contato-hero {
+      padding: 1.5rem 0.2rem 1rem 0.2rem;
+    }
+    .contato-hero h1 {
+      font-size: 1.1rem;
+    }
+    .contato-hero p {
+      font-size: 0.95rem;
+    }
+    .contato-form {
+      margin-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    .formulario-contato {
+      max-width: 100%;
+      padding: 0;
+      gap: 0.7rem;
+    }
+    .form-group label {
+      font-size: 0.95rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-size: 0.95rem;
+      padding: 0.5rem 0.7rem;
+    }
+    .formulario-contato button[type="submit"] {
+      font-size: 0.95rem;
+      padding: 0.7rem 1.2rem;
+    }
+    .contato-info {
+      font-size: 0.95rem;
+    }
+  }
+  @media (max-width: 360px) {
+    .contato-hero h1 {
+      font-size: 0.9rem;
+    }
+    .form-group label {
+      font-size: 0.85rem;
+    }
+    .contato-info {
+      font-size: 0.85rem;
+    }
+  }
   

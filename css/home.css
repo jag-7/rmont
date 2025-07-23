@@ -315,38 +315,90 @@
   }
   @media (max-width: 480px) {
     .hero {
-      padding: 2.5rem 0.2rem 1.5rem 0.2rem;
+      padding: 1.5rem 0.2rem 1rem 0.2rem;
     }
     .hero-content h1 {
       font-size: 1.1rem;
     }
-    .cta-buttons, .cta-final-buttons {
+    .hero-content p {
+      font-size: 0.95rem;
+    }
+    .cta-buttons {
       flex-direction: column;
       gap: 0.5rem;
     }
-    .btn {
+    .destaques {
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0.7rem 0.2rem;
+    }
+    .destaque-item h2 {
+      font-size: 1rem;
+    }
+    .destaque-item p {
+      font-size: 0.9rem;
+    }
+    .sobre-nos h2,
+    .servicos-destaque h2,
+    .clientes-setores h2,
+    .diferenciais h2,
+    .cta-final h2,
+    .nossos-clientes h2 {
+      font-size: 1.1rem;
+    }
+    .servicos-grid,
+    .clientes-grid,
+    .diferenciais-grid,
+    .clientes-logos-grid {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+    .servico-item,
+    .cliente-item,
+    .diferencial-item,
+    .cliente-logo-item {
+      padding: 0.7rem 0.3rem;
       font-size: 0.95rem;
-      padding: 0.7rem 1.2rem;
+    }
+    .cta-final {
+      padding: 1.2rem 0.2rem 1rem 0.2rem;
+    }
+    .cta-final p {
+      font-size: 0.95rem;
+    }
+    .contato-form {
+      margin-top: 1rem;
+      padding-bottom: 1rem;
     }
     .formulario-contato {
       max-width: 100%;
       padding: 0;
-    }
-    .clientes-logos-grid {
-      grid-template-columns: 1fr 1fr;
       gap: 0.7rem;
+    }
+    .form-group label {
+      font-size: 0.95rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-size: 0.95rem;
+      padding: 0.5rem 0.7rem;
+    }
+    .formulario-contato button[type="submit"] {
+      font-size: 0.95rem;
+      padding: 0.7rem 1.2rem;
     }
   }
   @media (max-width: 360px) {
     .hero-content h1 {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
     .btn {
-      font-size: 0.85rem;
-      padding: 0.6rem 0.7rem;
+      font-size: 0.8rem;
+      padding: 0.5rem 0.7rem;
     }
     .form-group label {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
     }
   }
   

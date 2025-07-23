@@ -61,4 +61,45 @@
       font-size: 1rem;
     }
   }
+  @media (max-width: 480px) {
+    .projetos-hero {
+      padding: 1.5rem 0.2rem 1rem 0.2rem;
+    }
+    .projetos-hero h1 {
+      font-size: 1.1rem;
+    }
+    .projetos-hero p {
+      font-size: 0.95rem;
+    }
+    .projetos-lista {
+      margin-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    .projetos-grid {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .projeto-item {
+      padding: 0.7rem 0.3rem;
+      font-size: 0.95rem;
+    }
+    .projeto-item h2 {
+      font-size: 1.1rem;
+    }
+    .projeto-item p {
+      font-size: 0.95rem;
+    }
+  }
+  @media (max-width: 360px) {
+    .projetos-hero h1 {
+      font-size: 0.9rem;
+    }
+    .projeto-item h2 {
+      font-size: 0.95rem;
+    }
+    .projeto-item p {
+      font-size: 0.85rem;
+    }
+  }
   

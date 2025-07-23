@@ -77,4 +77,51 @@
       padding: 0 0.2rem;
     }
   }
+  @media (max-width: 480px) {
+    .sobre-hero {
+      padding: 1.5rem 0.2rem 1rem 0.2rem;
+    }
+    .sobre-hero h1 {
+      font-size: 1.1rem;
+    }
+    .sobre-hero p {
+      font-size: 0.95rem;
+    }
+    .sobre-historia h2,
+    .sobre-missao-valores h2,
+    .sobre-equipe h2,
+    .sobre-parcerias h2,
+    .sobre-diferenciais h2 {
+      font-size: 1.1rem;
+      padding-top: 0.7rem;
+    }
+    .sobre-historia p,
+    .sobre-missao-valores ul,
+    .sobre-equipe p,
+    .sobre-parcerias p {
+      font-size: 0.95rem;
+      padding: 0 0.1rem;
+    }
+    .sobre-missao-valores ul.valores li {
+      font-size: 0.95rem;
+    }
+  }
+  @media (max-width: 360px) {
+    .sobre-hero h1 {
+      font-size: 0.9rem;
+    }
+    .sobre-historia h2,
+    .sobre-missao-valores h2,
+    .sobre-equipe h2,
+    .sobre-parcerias h2,
+    .sobre-diferenciais h2 {
+      font-size: 0.95rem;
+    }
+    .sobre-historia p,
+    .sobre-missao-valores ul,
+    .sobre-equipe p,
+    .sobre-parcerias p {
+      font-size: 0.85rem;
+    }
+  }
   
