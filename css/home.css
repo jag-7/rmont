@@ -1,0 +1,352 @@
+/* Hero Section */
+.hero {
+    background: linear-gradient(120deg, #0C76D6 60%, #07A8DA 100%);
+    color: #fff;
+    padding: 5rem 2rem 3rem 2rem;
+    text-align: center;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  /* Destaques */
+  .destaques {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background: #fff;
+    padding: 2rem 1rem;
+    margin-top: -2rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    flex-wrap: wrap;
+  }
+  .destaque-item {
+    text-align: center;
+    min-width: 180px;
+  }
+  .destaque-item h2 {
+    color: #07A8DA;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  /* Sobre Nós (Home) */
+  .sobre-nos {
+    background: #fff;
+    color: #222;
+    margin-top: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(12,118,214,0.04);
+  }
+  .sobre-nos h2 {
+    color: #0C76D6;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  /* Serviços em Destaque (Home) */
+  .servicos-destaque {
+    background: #f8f9fa;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .servicos-destaque h2 {
+    color: #0C76D6;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+  }
+  .servico-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(12,118,214,0.06);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .servico-item:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 6px 24px rgba(7,168,218,0.10);
+  }
+  .servico-item h3 {
+    color: #07A8DA;
+    margin-bottom: 0.7rem;
+  }
+  /* Clientes e Setores Atendidos */
+  .clientes-setores {
+    background: #fff;
+    margin-top: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(12,118,214,0.04);
+    padding-bottom: 2rem;
+  }
+  .clientes-setores h2 {
+    color: #0C76D6;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .clientes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  .cliente-item {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    color: #222;
+    font-weight: 500;
+    box-shadow: 0 1px 4px rgba(12,118,214,0.03);
+  }
+  .clientes-cta {
+    text-align: center;
+    color: #07A8DA;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  /* Diferenciais */
+  .diferenciais {
+    background: #f8f9fa;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .diferenciais h2 {
+    color: #0C76D6;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .diferenciais-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+  }
+  .diferencial-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(12,118,214,0.06);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .diferencial-item:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 6px 24px rgba(7,168,218,0.10);
+  }
+  .diferencial-item h3 {
+    color: #07A8DA;
+    margin-bottom: 0.7rem;
+  }
+  /* CTA Final */
+  .cta-final {
+    background: linear-gradient(120deg, #07A8DA 60%, #0C76D6 100%);
+    color: #fff;
+    text-align: center;
+    padding: 3rem 1rem 2.5rem 1rem;
+    margin-top: 2rem;
+  }
+  .cta-final h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .cta-final p {
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+  }
+  .cta-final-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  /* Formulário de Contato */
+  .contato-form {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(12,118,214,0.04);
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .contato-form h2 {
+    color: #0C76D6;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .formulario-contato {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .form-group label {
+    font-weight: 500;
+    color: #0C76D6;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.7rem 1rem;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: #f8f9fa;
+    color: #222;
+    transition: border 0.2s;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border: 1.5px solid #07A8DA;
+    outline: none;
+  }
+  .form-group.checkbox {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .formulario-contato button[type="submit"] {
+    margin-top: 1rem;
+    width: 100%;
+  }
+  .contato-info {
+    margin-top: 2rem;
+    text-align: center;
+    color: #222;
+    font-size: 1.05rem;
+  }
+  .contato-info p {
+    margin: 0.3rem 0;
+  }
+  /* Nossos Clientes */
+  .nossos-clientes {
+    background: #fff;
+    margin-top: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(12,118,214,0.04);
+    padding-bottom: 2rem;
+  }
+  .nossos-clientes h2 {
+    color: #0C76D6;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .clientes-logos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+    justify-items: center;
+  }
+  .cliente-logo-item {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.2rem 0.5rem;
+    text-align: center;
+    color: #07A8DA;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 1px 4px rgba(12,118,214,0.03);
+    min-width: 120px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nossos-clientes .clientes-cta {
+    text-align: center;
+    color: #0C76D6;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  @media (max-width: 720px) {
+    .hero-content h1 {
+      font-size: 1.4rem;
+    }
+    .hero-content p {
+      font-size: 1rem;
+    }
+    .destaques {
+      gap: 0.7rem;
+      padding: 1.2rem 0.2rem;
+    }
+    .destaque-item h2 {
+      font-size: 1.2rem;
+    }
+    .destaque-item p {
+      font-size: 0.95rem;
+    }
+    .servicos-grid, .clientes-grid, .diferenciais-grid, .clientes-logos-grid {
+      grid-template-columns: 1fr;
+      gap: 0.7rem;
+    }
+    .servico-item, .cliente-item, .diferencial-item, .cliente-logo-item {
+      padding: 1rem 0.5rem;
+      font-size: 1rem;
+    }
+    .cta-final h2 {
+      font-size: 1.2rem;
+    }
+    .cta-final p {
+      font-size: 1rem;
+    }
+    .formulario-contato {
+      padding: 0 0.1rem;
+    }
+  }
+  @media (max-width: 480px) {
+    .hero {
+      padding: 2.5rem 0.2rem 1.5rem 0.2rem;
+    }
+    .hero-content h1 {
+      font-size: 1.1rem;
+    }
+    .cta-buttons, .cta-final-buttons {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .btn {
+      font-size: 0.95rem;
+      padding: 0.7rem 1.2rem;
+    }
+    .formulario-contato {
+      max-width: 100%;
+      padding: 0;
+    }
+    .clientes-logos-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 0.7rem;
+    }
+  }
+  @media (max-width: 360px) {
+    .hero-content h1 {
+      font-size: 0.95rem;
+    }
+    .btn {
+      font-size: 0.85rem;
+      padding: 0.6rem 0.7rem;
+    }
+    .form-group label {
+      font-size: 0.95rem;
+    }
+  }
+  

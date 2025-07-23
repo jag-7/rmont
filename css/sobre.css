@@ -1,0 +1,80 @@
+/* Hero Sobre */
+.sobre-hero {
+    background: linear-gradient(120deg, #07A8DA 60%, #0C76D6 100%);
+    color: #fff;
+    text-align: center;
+    padding: 3rem 1rem 2rem 1rem;
+  }
+  .sobre-hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.7rem;
+  }
+  .sobre-hero p {
+    font-size: 1.15rem;
+  }
+  .sobre-historia, .sobre-missao-valores, .sobre-equipe, .sobre-parcerias {
+    background: #fff;
+    margin-top: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(12,118,214,0.04);
+    padding-bottom: 1.5rem;
+  }
+  .sobre-historia h2, .sobre-missao-valores h2, .sobre-equipe h2, .sobre-parcerias h2 {
+    color: #0C76D6;
+    margin-bottom: 1rem;
+    padding-top: 2rem;
+    text-align: center;
+  }
+  .sobre-historia p, .sobre-missao-valores ul, .sobre-equipe p, .sobre-parcerias p {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.08rem;
+    color: #222;
+    padding: 0 1rem;
+  }
+  .sobre-missao-valores ul.valores {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0 0;
+  }
+  .sobre-missao-valores ul.valores li {
+    margin-bottom: 0.7rem;
+    font-size: 1.05rem;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+  .sobre-missao-valores ul.valores li:before {
+    content: '\2022';
+    color: #07A8DA;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+  .sobre-diferenciais {
+    background: #f8f9fa;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .sobre-diferenciais h2 {
+    color: #0C76D6;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  @media (max-width: 720px) {
+    .sobre-hero h1 {
+      font-size: 1.3rem;
+    }
+    .sobre-hero p {
+      font-size: 1rem;
+    }
+    .sobre-historia h2, .sobre-missao-valores h2, .sobre-equipe h2, .sobre-parcerias h2, .sobre-diferenciais h2 {
+      font-size: 1.1rem;
+      padding-top: 1.2rem;
+    }
+    .sobre-historia p, .sobre-missao-valores ul, .sobre-equipe p, .sobre-parcerias p {
+      font-size: 0.98rem;
+      padding: 0 0.2rem;
+    }
+  }
+  

@@ -1,0 +1,64 @@
+.servicos-hero {
+    background: linear-gradient(120deg, #07A8DA 60%, #0C76D6 100%);
+    color: #fff;
+    text-align: center;
+    padding: 3rem 1rem 2rem 1rem;
+  }
+  .servicos-hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.7rem;
+  }
+  .servicos-hero p {
+    font-size: 1.15rem;
+  }
+  .servicos-lista {
+    background: #fff;
+    margin-top: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(12,118,214,0.04);
+    padding-bottom: 2rem;
+  }
+  .servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .servico-item {
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(12,118,214,0.06);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .servico-item:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 6px 24px rgba(7,168,218,0.10);
+  }
+  .servico-item h2 {
+    color: #07A8DA;
+    margin-bottom: 0.7rem;
+    font-size: 1.3rem;
+  }
+  .servico-item p {
+    font-size: 1.05rem;
+    color: #222;
+  }
+  @media (max-width: 720px) {
+    .servicos-hero h1 {
+      font-size: 1.3rem;
+    }
+    .servicos-hero p {
+      font-size: 1rem;
+    }
+    .servicos-grid {
+      grid-template-columns: 1fr;
+      gap: 0.7rem;
+    }
+    .servico-item {
+      padding: 1rem 0.5rem;
+      font-size: 1rem;
+    }
+  }
+  
