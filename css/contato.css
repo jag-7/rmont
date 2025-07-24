@@ -3,74 +3,199 @@
     color: #fff;
     text-align: center;
     padding: 3rem 1rem 2rem 1rem;
-  }
-  .contato-hero h1 {
+}
+
+.contato-hero h1 {
     font-size: 2.2rem;
     margin-bottom: 0.7rem;
-  }
-  .contato-hero p {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(12,118,214,0.10);
+}
+
+.contato-hero p {
     font-size: 1.15rem;
-  }
-  .contato-form {
+    color: #e6f7ff;
+}
+
+.contato-form {
     background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(12,118,214,0.04);
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(12,118,214,0.08);
     margin-top: 2rem;
     padding-bottom: 2rem;
-  }
-  .formulario-contato {
+    border: 1.5px solid #e6f7ff;
+}
+
+.formulario-contato {
     max-width: 600px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
-  }
-  .form-group {
+}
+
+.form-group {
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
-  }
-  .form-group label {
-    font-weight: 500;
+}
+
+.form-group label {
+    font-weight: 600;
     color: #0C76D6;
-  }
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
     padding: 0.7rem 1rem;
-    border: 1px solid #d0d7de;
-    border-radius: 6px;
+    border: 1.5px solid #d0d7de;
+    border-radius: 8px;
     font-size: 1rem;
     font-family: 'Montserrat', Arial, sans-serif;
     background: #f8f9fa;
     color: #222;
     transition: border 0.2s;
-  }
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
     border: 1.5px solid #07A8DA;
     outline: none;
-  }
-  .form-group.checkbox {
+    background: #fff;
+}
+
+.form-group.checkbox {
     flex-direction: row;
     align-items: center;
     gap: 0.5rem;
-  }
-  .formulario-contato button[type="submit"] {
+}
+
+.formulario-contato button[type="submit"] {
     margin-top: 1rem;
     width: 100%;
+    background: #07A8DA;
+    color: #fff;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 16px rgba(12,118,214,0.10);
+    transition: background 0.2s;
+}
+
+.formulario-contato button[type="submit"]:hover {
+    background: #0C76D6;
+}
+
+/* Layout principal dos blocos */
+.contato-blocos {
+  background: #f8f9fa;
+  padding: 0 0 3rem 0;
+}
+.contato-grid {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Bloco Esquerdo: Cards de contato */
+.contato-info-cards {
+  flex: 1 1 340px;
+  min-width: 320px;
+  max-width: 420px;
+}
+.contato-info-cards h2 {
+  color: #2196f3;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.contato-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(12,118,214,0.06);
+  border: 1.5px solid #e6f7ff;
+  padding: 1.2rem 1.2rem 1.1rem 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.contato-card-icone {
+  font-size: 2rem;
+  color: #07A8DA;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+.contato-card strong {
+  color: #0C76D6;
+  font-weight: 700;
+  font-size: 1.08rem;
+}
+
+/* Bloco Direito: Formulário */
+.contato-form-bloco {
+  flex: 1 1 400px;
+  min-width: 340px;
+  max-width: 520px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(12,118,214,0.08);
+  border: 1.5px solid #e6f7ff;
+  padding: 2.2rem 2rem 2rem 2rem;
+}
+.contato-form-bloco h2 {
+  color: #2196f3;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+/* Responsividade */
+@media (max-width: 1020px) {
+  .contato-grid {
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: stretch;
   }
-  .contato-info {
-    margin-top: 2rem;
-    text-align: center;
-    color: #222;
-    font-size: 1.05rem;
+  .contato-info-cards, .contato-form-bloco {
+    max-width: 100%;
+    min-width: 0;
   }
-  .contato-info p {
-    margin: 0.3rem 0;
+}
+@media (max-width: 600px) {
+  .contato-form-bloco, .contato-info-cards {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
   }
-  @media (max-width: 720px) {
+  .contato-form-bloco h2, .contato-info-cards h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .contato-card {
+    padding: 0.8rem 0.7rem 0.7rem 0.7rem;
+    font-size: 0.98rem;
+  }
+}
+
+/* Ajustes para formulário e info já existentes */
+.formulario-contato {
+  max-width: 100%;
+  margin: 0;
+}
+
+/* Remove info antiga duplicada */
+.contato-info {
+  display: none;
+}
+
+@media (max-width: 720px) {
     .contato-hero h1 {
       font-size: 1.3rem;
     }
@@ -80,8 +205,13 @@
     .formulario-contato {
       padding: 0 0.1rem;
     }
-  }
-  @media (max-width: 480px) {
+    .contato-info {
+      font-size: 0.98rem;
+      padding: 1rem 0.5rem 0.8rem 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
     .contato-hero {
       padding: 1.5rem 0.2rem 1rem 0.2rem;
     }
@@ -116,8 +246,9 @@
     .contato-info {
       font-size: 0.95rem;
     }
-  }
-  @media (max-width: 360px) {
+}
+
+@media (max-width: 360px) {
     .contato-hero h1 {
       font-size: 0.9rem;
     }
@@ -127,5 +258,67 @@
     .contato-info {
       font-size: 0.85rem;
     }
+}
+
+/* EFEITOS VISUAIS MODERNOS */
+
+/* 1. Hover nos cards de contato */
+.contato-card {
+  transition: box-shadow 0.25s, transform 0.22s;
+}
+.contato-card:hover {
+  box-shadow: 0 8px 32px rgba(12,118,214,0.16);
+  transform: translateY(-4px) scale(1.025);
+  border-color: #07A8DA;
+  z-index: 2;
+}
+.contato-card:hover .contato-card-icone {
+  color: #0C76D6;
+  filter: brightness(1.2);
+  transition: color 0.22s, filter 0.22s;
+}
+
+/* 2. Transição suave no botão */
+.formulario-contato button[type="submit"] {
+  transition: background 0.2s, box-shadow 0.22s, transform 0.12s;
+}
+.formulario-contato button[type="submit"]:hover {
+  box-shadow: 0 6px 24px rgba(12,118,214,0.18);
+  filter: brightness(1.08);
+  transform: scale(1.03);
+}
+.formulario-contato button[type="submit"]:active {
+  transform: scale(0.97);
+  filter: brightness(0.98);
+}
+
+/* 3. Sombra azul clara ao focar nos campos do formulário */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  box-shadow: 0 0 0 2px #07A8DA33;
+}
+
+/* 4. Animação de entrada nos cards e formulário */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.contato-info-cards, .contato-form-bloco {
+  animation: fadeSlideUp 0.8s cubic-bezier(.4,1.4,.6,1) both;
+}
+.contato-info-cards {
+  animation-delay: 0.1s;
+}
+.contato-form-bloco {
+  animation-delay: 0.25s;
+}
+
+/* 5. Efeito de clique no botão já incluso acima (active) */
   

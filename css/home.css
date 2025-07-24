@@ -278,6 +278,106 @@
     font-weight: 600;
     font-size: 1.1rem;
   }
+  /* Layout principal dos blocos de contato na home */
+.contato-blocos {
+  background: #f8f9fa;
+  padding: 0 0 3rem 0;
+}
+.contato-grid {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Bloco Esquerdo: Cards de contato */
+.contato-info-cards {
+  flex: 1 1 340px;
+  min-width: 320px;
+  max-width: 420px;
+}
+.contato-info-cards h2 {
+  color: #2196f3;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.contato-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(12,118,214,0.06);
+  border: 1.5px solid #e6f7ff;
+  padding: 1.2rem 1.2rem 1.1rem 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.contato-card-icone {
+  font-size: 2rem;
+  color: #07A8DA;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+.contato-card strong {
+  color: #0C76D6;
+  font-weight: 700;
+  font-size: 1.08rem;
+}
+
+/* Bloco Direito: Formulário */
+.contato-form-bloco {
+  flex: 1 1 400px;
+  min-width: 340px;
+  max-width: 520px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(12,118,214,0.08);
+  border: 1.5px solid #e6f7ff;
+  padding: 2.2rem 2rem 2rem 2rem;
+}
+.contato-form-bloco h2 {
+  color: #2196f3;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+/* Responsividade */
+@media (max-width: 1020px) {
+  .contato-grid {
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: stretch;
+  }
+  .contato-info-cards, .contato-form-bloco {
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+@media (max-width: 600px) {
+  .contato-form-bloco, .contato-info-cards {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+  }
+  .contato-form-bloco h2, .contato-info-cards h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .contato-card {
+    padding: 0.8rem 0.7rem 0.7rem 0.7rem;
+    font-size: 0.98rem;
+  }
+}
+
+/* Ajustes para formulário e info já existentes */
+.formulario-contato {
+  max-width: 100%;
+  margin: 0;
+}
   @media (max-width: 720px) {
     .hero-content h1 {
       font-size: 1.4rem;

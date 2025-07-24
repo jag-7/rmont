@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
   <header>
@@ -19,7 +20,7 @@
         <li><a href="sobre.html">Sobre Nós</a></li>
         <li><a href="servicos.html">Serviços</a></li>
         <li><a href="produtos.html">Produtos</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="projetos.html">Portifolio</a></li>
         <li><a href="contato.html" class="active">Contato</a></li>
       </ul>
       <div class="menu-toggle" id="mobile-menu">
@@ -31,57 +32,88 @@
   <main>
     <section class="contato-hero">
       <div class="container">
-        <h1>Fale Conosco</h1>
-        <p>Entre em contato com a equipe R-Mont. Estamos prontos para atender você!</p>
+        <h1>Vamos Desenvolver sua Solução</h1>
+        <p>Nossa equipe está pronta para atender suas necessidades e desenvolver a solução ideal para seu projeto.</p>
       </div>
     </section>
 
-    <section class="contato-form">
-      <div class="container">
-        <form class="formulario-contato">
-          <div class="form-group">
-            <label for="nome">Nome Completo</label>
-            <input type="text" id="nome" name="nome" required>
+    <section class="contato-blocos">
+      <div class="container contato-grid">
+        <!-- Bloco Esquerdo: Informações de Contato -->
+        <div class="contato-info-cards">
+          <h2>Informações de Contato</h2>
+          <div class="contato-card">
+            <div class="contato-card-icone"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <strong>Localização</strong><br>
+              Sede: Luanda, Angola<br>
+              Atendimento em todo território nacional
+            </div>
           </div>
-          <div class="form-group">
-            <label for="empresa">Empresa/Instituição</label>
-            <input type="text" id="empresa" name="empresa">
+          <div class="contato-card">
+            <div class="contato-card-icone"><i class="fas fa-phone"></i></div>
+            <div>
+              <strong>Telefones</strong><br>
+              +244 944 38 54 52<br>
+              +244 950 59 36 74
+            </div>
           </div>
-          <div class="form-group">
-            <label for="telefone">Telefone</label>
-            <input type="tel" id="telefone" name="telefone" required>
+          <div class="contato-card">
+            <div class="contato-card-icone"><i class="fas fa-envelope"></i></div>
+            <div>
+              <strong>E-mails</strong><br>
+              comercial@rmont-business.com<br>
+              geral.rmont@gmail.com
+            </div>
           </div>
-          <div class="form-group">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required>
+          <div class="contato-card">
+            <div class="contato-card-icone"><i class="fas fa-clock"></i></div>
+            <div>
+              <strong>Horário de Atendimento</strong><br>
+              Assistência Técnica: 24h/7 dias<br>
+              Comercial: Segunda a Sexta, 8h às 18h
+            </div>
           </div>
-          <div class="form-group">
-            <label for="tipo-servico">Tipo de Serviço</label>
-            <select id="tipo-servico" name="tipo-servico" required>
-              <option value="">Selecione</option>
-              <option>Tratamento de Água Doméstica</option>
-              <option>Tratamento de Água Industrial</option>
-              <option>Osmose Reversa</option>
-              <option>Tratamento de Efluentes</option>
-              <option>Piscinas</option>
-              <option>Manutenção e Assistência Técnica</option>
-              <option>Outro</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="mensagem">Mensagem</label>
-            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-          </div>
-          <div class="form-group checkbox">
-            <input type="checkbox" id="aceito" name="aceito">
-            <label for="aceito">Aceito receber informações comerciais</label>
-          </div>
-          <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
-        </form>
-        <div class="contato-info">
-          <p><strong>Telefones:</strong> +244 944 38 54 52 | 950 59 36 74</p>
-          <p><strong>E-mails:</strong> comercial@rmont-business.com | geral.rmont@gmail.com</p>
-          <p><strong>Endereço:</strong> Luanda, Angola</p>
+        </div>
+        <!-- Bloco Direito: Formulário -->
+        <div class="contato-form-bloco">
+          <h2>Solicite seu Orçamento</h2>
+          <form class="formulario-contato">
+            <div class="form-group">
+              <label for="nome">Nome Completo *</label>
+              <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+              <label for="empresa">Empresa/Instituição</label>
+              <input type="text" id="empresa" name="empresa">
+            </div>
+            <div class="form-group">
+              <label for="telefone">Telefone *</label>
+              <input type="tel" id="telefone" name="telefone" required>
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="tipo-servico">Tipo de Serviço</label>
+              <select id="tipo-servico" name="tipo-servico" required>
+                <option value="">Selecione um serviço</option>
+                <option>Tratamento de Água Doméstica</option>
+                <option>Tratamento de Água Industrial</option>
+                <option>Osmose Reversa</option>
+                <option>Tratamento de Efluentes</option>
+                <option>Piscinas</option>
+                <option>Manutenção e Assistência Técnica</option>
+                <option>Outro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Descreva suas Necessidades *</label>
+              <textarea id="mensagem" name="mensagem" rows="4" required placeholder="Descreva detalhadamente suas necessidades, localização do projeto e qualquer informação relevante"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Enviar Solicitação</button>
+          </form>
         </div>
       </div>
     </section>
