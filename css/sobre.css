@@ -470,3 +470,52 @@
   .sobre-equipe-mensagem { padding: 24px; }
   .sobre-equipe-mensagem p { font-size: 1.1rem; }
 } 
+
+@media (max-width: 480px) {
+  .sobre-section {
+    display: block;
+    min-height: unset;
+    padding-bottom: 0;
+    align-items: unset;
+    justify-content: unset;
+  }
+  .sobre-container {
+    display: block;
+    padding: 0 2px;
+    gap: 0;
+  }
+  .sobre-right {
+    display: none !important;
+  }
+  .sobre-img-direita {
+    max-width: 120px;
+    margin: 6px auto 0 auto;
+  }
+  .sobre-title { font-size: 1.1rem; }
+  .sobre-desc, .sobre-missao, .sobre-historia-texto p, .sobre-equipe-texto p, .sobre-parcerias-texto p { font-size: 0.85rem; }
+  .btn-cta { font-size: 0.9rem; padding: 0.5rem 0; }
+}
+@media (max-width: 320px) {
+  .sobre-section {
+    display: block;
+    min-height: unset;
+    padding-bottom: 0;
+    align-items: unset;
+    justify-content: unset;
+  }
+  .sobre-container {
+    display: block;
+    padding: 0 1px;
+    gap: 0;
+  }
+  .sobre-right {
+    display: none !important;
+  }
+  .sobre-img-direita {
+    max-width: 80px;
+    margin: 4px auto 0 auto;
+  }
+  .sobre-title { font-size: 0.8rem; }
+  .sobre-desc, .sobre-missao, .sobre-historia-texto p, .sobre-equipe-texto p, .sobre-parcerias-texto p { font-size: 0.7rem; }
+  .btn-cta { font-size: 0.7rem; padding: 0.3rem 0; }
+} 
