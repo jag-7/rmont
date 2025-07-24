@@ -1,10 +1,170 @@
 /* Hero Section */
 .hero {
-    background: linear-gradient(120deg, #0C76D6 60%, #07A8DA 100%);
-    color: #fff;
-    padding: 5rem 2rem 3rem 2rem;
-    text-align: center;
+  background: linear-gradient(120deg, #0C76D6 60%, #07A8DA 100%);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  padding: 0 3rem;
+  min-height: 80vh;
+}
+
+.hero-text-col {
+  flex: 1 1 520px;
+  min-width: 340px;
+  max-width: 540px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.hero-text-col h1 {
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.hero-text-col p {
+  color: #e6f7ff;
+  font-size: 1.18rem;
+  margin-bottom: 2.2rem;
+}
+
+.hero-destaques {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 2.2rem;
+  flex-wrap: wrap;
+}
+
+.hero-destaque-item {
+  text-align: center;
+}
+
+.hero-destaque-num {
+  font-size: 2.1rem;
+  font-weight: bold;
+  color: #7ec6ff;
+}
+
+.hero-destaque-txt {
+  color: #e6f7ff;
+  font-size: 1rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.hero-cards {
+  flex: 1 1 420px;
+  min-width: 340px;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+.hero-card {
+  background: rgba(255,255,255,0.08);
+  border: 2px solid #fff;
+  border-radius: 22px;
+  box-shadow: 0 8px 32px 0 rgba(255,255,255,0.10);
+  padding: 2.2rem 2rem 1.8rem 2rem;
+  min-width: 270px;
+  max-width: 350px;
+  color: #fff;
+  position: relative;
+  transition: transform 0.35s cubic-bezier(.21,1.02,.73,1), box-shadow 0.3s;
+  will-change: transform;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-card-1 {
+  margin-top: 0;
+  animation: floatCard1 3.5s ease-in-out infinite alternate;
+}
+.hero-card-2 {
+  margin-top: 3.5rem;
+  animation: floatCard2 3.2s ease-in-out infinite alternate 0.7s;
+}
+.hero-card-3 {
+  margin-top: 5rem;
+  animation: floatCard3 3.8s ease-in-out infinite alternate 0.3s;
+}
+
+@keyframes floatCard1 {
+  0% { transform: rotate(-3deg) translateX(-52px) translateY(0px); }
+  100% { transform: rotate(-3deg) translateX(-52px) translateY(-14px); }
+}
+@keyframes floatCard2 {
+  0% { transform: rotate(2deg) translateX(68px) translateY(0px); }
+  100% { transform: rotate(2deg) translateX(68px) translateY(-22px); }
+}
+@keyframes floatCard3 {
+  0% { transform: rotate(-1.5deg) translateX(-38px) translateY(0px); }
+  100% { transform: rotate(-1.5deg) translateX(-38px) translateY(-10px); }
+}
+
+.hero-card-icone {
+  font-size: 2.1rem;
+  margin-bottom: 1.1rem;
+  color: #fff;
+}
+
+.hero-card-title {
+  font-weight: bold;
+  font-size: 1.18rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.hero-card-desc {
+  font-size: 1.05rem;
+  color: #e6f7ff;
+}
+
+@media (max-width: 1020px) {
+  .hero-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2.5rem;
+    min-height: unset;
+    padding: 2rem 1rem;
   }
+  .hero-cards {
+    align-items: center;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .hero-card {
+    min-width: 220px;
+    max-width: 340px;
+  }
+}
   .hero-content h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
@@ -20,7 +180,7 @@
   }
   /* Destaques */
   .destaques {
-    display: flex;
+    display: none;
     justify-content: center;
     gap: 2rem;
     background: #fff;
@@ -501,4 +661,239 @@
       font-size: 0.85rem;
     }
   }
-  
+
+.secao-titulo {
+  color: #0C76D6;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 2.5rem 0 2rem 0;
+}
+
+.servicos-home {
+  background: #fff;
+  padding: 2.5rem 1rem 2.5rem 1rem;
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 2px 12px rgba(12,118,214,0.04);
+}
+
+.servicos-grid-home {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.servico-card-home {
+  background: #fff;
+  border: 1.5px solid #e6f7ff;
+  border-radius: 22px;
+  box-shadow: 0 2px 12px rgba(12,118,214,0.06);
+  min-width: 200px;
+  max-width: 260px;
+  min-height: 220px;
+  padding: 2.2rem 1.2rem 1.5rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.servico-card-home:hover {
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 8px 32px rgba(12,118,214,0.10);
+}
+.servico-card-icone {
+  font-size: 2.2rem;
+  color: #0C76D6;
+  margin-bottom: 1.1rem;
+}
+.servico-card-titulo {
+  font-weight: bold;
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+  color: #0C76D6;
+}
+.servico-card-desc {
+  font-size: 1rem;
+  color: #29508a;
+}
+
+.sectores-home {
+  background: #f4f4f4;
+  padding: 2.5rem 1rem 2.5rem 1rem;
+  border-radius: 0 0 18px 18px;
+  margin-top: 2.5rem;
+}
+.sectores-tabela-bg {
+  background: #eaeaea;
+  padding: 2.2rem 1rem;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+}
+.sectores-tabela {
+  border-collapse: collapse;
+  background: #fff;
+  min-width: 600px;
+  font-size: 1.08rem;
+  color: #29508a;
+}
+.sectores-tabela td {
+  border: 2px solid #222;
+  padding: 1.2rem 1.5rem;
+  text-align: center;
+  min-width: 160px;
+}
+
+.clientes-home {
+  background: #fff;
+  padding: 2.5rem 1rem 2.5rem 1rem;
+  border-radius: 0 0 18px 18px;
+  margin-top: 2.5rem;
+}
+.clientes-carrossel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+.clientes-carrossel-lista {
+  background: #fff;
+  border: 1.5px solid #e6f7ff;
+  border-radius: 12px;
+  padding: 1.1rem 2.2rem;
+  display: flex;
+  gap: 2.2rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #222;
+  align-items: center;
+}
+.carrossel-btn {
+  background: #fff;
+  border: 1.5px solid #0C76D6;
+  color: #0C76D6;
+  font-size: 1.5rem;
+  border-radius: 8px;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.carrossel-btn:hover {
+  background: #0C76D6;
+  color: #fff;
+}  
+
+@media (max-width: 720px) {
+  .hero-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.2rem;
+    min-height: unset;
+    padding: 1.2rem 0.5rem;
+  }
+  .hero-text-col h1 {
+    font-size: 1.5rem;
+  }
+  .hero-text-col p {
+    font-size: 1rem;
+  }
+  .hero-destaques, .hero-cards {
+    display: none !important;
+  }
+  .servicos-grid-home, .servicos-grid {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+  }
+  .servico-card-home, .servico-item {
+    min-width: 0;
+    max-width: 100%;
+    font-size: 0.98rem;
+    padding: 1.2rem 0.7rem 1rem 0.7rem;
+  }
+  .secao-titulo, .servicos-home h2, .servicos-destaque h2 {
+    font-size: 1.2rem;
+  }
+  .destaques {
+    display: none;
+  }
+  .destaque-item {
+    min-width: 90px;
+    max-width: 120px;
+    font-size: 0.92rem;
+    padding: 0.2rem 0.1rem;
+    text-align: center;
+  }
+  .destaque-item h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+  }
+  .destaque-item p {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 0.7rem 0.1rem 0.5rem 0.1rem;
+  }
+  .hero-text-col h1 {
+    font-size: 1.1rem;
+  }
+  .hero-text-col p {
+    font-size: 0.92rem;
+  }
+  .secao-titulo, .servicos-home h2, .servicos-destaque h2 {
+    font-size: 1rem;
+  }
+  .servico-card-home, .servico-item {
+    font-size: 0.92rem;
+    padding: 0.7rem 0.3rem 0.6rem 0.3rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-text-col h1 {
+    font-size: 0.9rem;
+  }
+  .secao-titulo, .servicos-home h2, .servicos-destaque h2 {
+    font-size: 0.85rem;
+  }
+}  
+
+.destaques {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  body .destaques {
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.7rem 0.2rem;
+    margin-top: 0.5rem;
+    justify-content: center;
+  }
+  .destaque-item {
+    min-width: 90px;
+    max-width: 120px;
+    font-size: 0.92rem;
+    padding: 0.2rem 0.1rem;
+    text-align: center;
+  }
+  .destaque-item h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+  }
+  .destaque-item p {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+  }
+}  

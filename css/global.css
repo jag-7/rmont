@@ -17,6 +17,18 @@ header {
   margin: 0 auto;
   padding: 1rem 2rem;
 }
+
+.linha-azul-bottom {
+  width: 100vw;
+  height: 6px;
+  background: #e6f7ff;
+  margin: 0;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+}
+
 .logo {
   font-weight: 700;
   font-size: 1.7rem;
@@ -80,12 +92,81 @@ footer {
   color: #fff;
   text-align: center;
   padding: 1.5rem 0 1rem 0;
-  margin-top: 2rem;
+
 }
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1rem;
+}
+/* FOOTER DE CONTATO MINIMALISTA */
+.footer-contato {
+  background: #fff;
+  border-top: 1.5px solid #e6f7ff;
+  padding: 2.2rem 1rem 1.5rem 1rem;
+  text-align: center;
+  color: #222;
+  font-size: 1.08rem;
+
+}
+.footer-contato .footer-contato-list {
+  display: flex;
+  flex-direction: row;
+  gap: 2.2rem;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex-wrap: wrap;
+}
+.footer-contato .footer-contato-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.08rem;
+  color: #222;
+}
+.footer-contato .footer-contato-item i {
+  color: #07A8DA;
+  font-size: 1.2rem;
+  min-width: 27px;
+}
+.footer-contato .footer-contato-titulo {
+  font-weight: 700;
+  color: #0C76D6;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.navbar .nav-links li a {
+  font-weight: bold;
+  font-size: 1.15rem;
+  transition: color 0.2s, border-bottom 0.2s;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+}
+
+.navbar .nav-links li a:hover,
+.navbar .nav-links li a.active {
+  color: #0074d9;
+  border-bottom: 2px solid #0074d9;
+}
+h1, h2, h3 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.7rem;
+}
+
+h2 {
+  font-size: 2.1rem;
+}
+
+h3 {
+  font-size: 1.4rem;
 }
 @media (max-width: 900px) {
   .navbar {
@@ -160,6 +241,22 @@ footer {
   .nav-links li a:focus {
     background: #0C76D6;
     color: #fff !important;
+  }
+}
+@media (max-width: 600px) {
+  .footer-contato {
+    font-size: 0.98rem;
+    padding: 1.2rem 0.2rem 1rem 0.2rem;
+  }
+  .footer-contato .footer-contato-titulo {
+    font-size: 1rem;
+  }
+  .footer-contato .footer-contato-item {
+    font-size: 0.98rem;
+  }
+  .footer-contato .footer-contato-list {
+    flex-direction: column;
+    gap: 0.7rem;
   }
 }
 @media (max-width: 480px) {
