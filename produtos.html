@@ -33,24 +33,66 @@
       <div class="container">
         <h1>Nossos Produtos</h1>
         <p>Equipamentos, produtos químicos e consumíveis para todas as necessidades de tratamento de água.</p>
+        <div class="produtos-busca-filtros">
+          <input type="text" id="busca-produto" placeholder="Pesquisar Produto">
+          
+        </div>
       </div>
     </section>
 
     <section class="produtos-lista">
+      <div class="produtos-filtros">
+        <button class="filtro-btn active" data-categoria="todos">Todos os Produtos</button>
+        <button class="filtro-btn" data-categoria="equipamentos">Equipamentos</button>
+        <button class="filtro-btn" data-categoria="quimicos">Produtos Químicos</button>
+        <button class="filtro-btn" data-categoria="consumiveis">Consumíveis</button>
+      </div>
+
       <div class="container">
-        <div class="produtos-grid">
-          <div class="produto-item">
-            <h2>Equipamentos</h2>
-            <p>Filtros, desmineralizadores, purificadores, sistemas UV, osmose reversa, controladores e muito mais das melhores marcas do mercado.</p>
+        <div class="produtos-grid" id="produtos-grid">
+          <!-- Exemplo de produto -->
+          <div class="produto-card" data-categoria="equipamentos">
+            <img src="fitro.png" alt="Sistema de Purificação de Água">
+            <h3>Sistema de Purificação de Água</h3>
+            <div class="produto-preco">700 000,00Kz</div>
+            <div class="produto-quantidade">
+              Qt. <input type="number" min="1" value="1">
+            </div>
+            <div class="produto-botoes">
+              <button class="btn-carrinho">Adicionar ao carrinho</button>
+              <button class="btn-comprar">Comprar agora</button>
+            </div>
           </div>
-          <div class="produto-item">
-            <h2>Produtos Químicos</h2>
-            <p>Hipoclorito de cálcio e sódio, hidróxido de sódio, ácido clorídrico, anti-incrustante, sulfato de alumínio, algicida, floculante e outros.</p>
+          <div class="produto-card" data-categoria="quimicos">
+            <img src="fitro.jpg" alt="Hipoclorito de Sódio">
+            <h3>Hipoclorito de Sódio</h3>
+            <div class="produto-preco">15 000,00Kz</div>
+            <div class="produto-quantidade">
+              Qt. <input type="number" min="1" value="1">
+            </div>
+            <div class="produto-botoes">
+              <button class="btn-carrinho">Adicionar ao carrinho</button>
+              <button class="btn-comprar">Comprar agora</button>
+            </div>
           </div>
-          <div class="produto-item">
-            <h2>Consumíveis</h2>
-            <p>Células de algodão, lâmpadas UV, filtros de sedimento, carvão ativado, resinas catiônicas, acessórios e peças de reposição.</p>
+          <div class="produto-card" data-categoria="consumiveis">
+            <img src="fitro.jpg" alt="Filtro de Sedimento">
+            <h3>Filtro de Sedimento</h3>
+            <div class="produto-preco">5 000,00Kz</div>
+            <div class="produto-quantidade">
+              Qt. <input type="number" min="1" value="1">
+            </div>
+            <div class="produto-botoes">
+              <button class="btn-carrinho">Adicionar ao carrinho</button>
+              <button class="btn-comprar">Comprar agora</button>
+            </div>
           </div>
+          <!-- Adicione mais produtos conforme necessário -->
+        </div>
+        <div class="produtos-paginacao" id="produtos-paginacao">
+          <button class="paginacao-btn">1</button>
+          <button class="paginacao-btn">2</button>
+          <button class="paginacao-btn">3</button>
         </div>
       </div>
     </section>
