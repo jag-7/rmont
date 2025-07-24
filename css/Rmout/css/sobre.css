@@ -1,6 +1,7 @@
 /* === SOBRE - TOPO === */
 .sobre-section {
   width: 100%;
+  min-height: 100vh;
   background: #fff;
   display: flex;
   align-items: center;
@@ -16,10 +17,6 @@
   justify-content: center;
   align-items: center;
   padding: 0 16px;
-}
-.sobre-left, .sobre-right {
-  width: auto;
-  order: unset;
 }
 .sobre-left {
   flex: 1 1 520px;
@@ -135,8 +132,53 @@
   height: 100%;
   min-height: 540px;
 }
+.sobre-parceiros-box {
+  background: #f8fafc;
+  border-radius: 32px;
+  box-shadow: 0 12px 48px rgba(44, 62, 80, 0.13);
+  padding: 48px 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 20px;
+  width: 100%;
+  min-width: 280px;
+  max-width: 420px;
+}
+.sobre-parceiro-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(44, 62, 80, 0.07);
+  padding: 24px 12px 16px 12px;
+  text-align: center;
+  transition: box-shadow 0.18s, transform 0.18s;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 130px;
+  min-height: 130px;
+  max-height: 140px;
+}
+.sobre-parceiro-card:hover {
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.13);
+  transform: translateY(-2px) scale(1.02);
+}
+.sobre-parceiro-card h4 {
+  color: #0C76D6;
+  font-size: 1.08rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+.sobre-parceiro-card p {
+  color: #4a5568;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
 .sobre-img-direita {
-  max-width: 440px;
+  max-width: 340px;
   width: 100%;
   height: auto;
   border-radius: 24px;
@@ -144,58 +186,95 @@
   object-fit: contain;
   display: block;
 }
-
-.desktop-only { display: block; }
-.mobile-only { display: none; }
+@media (max-width: 1000px) {
+  .sobre-img-direita {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 700px) {
+  .sobre-img-direita {
+    max-width: 260px;
+  }
+}
 
 @media (max-width: 1200px) {
   .sobre-container { max-width: 1000px; }
   .sobre-secao-container { max-width: 900px; }
 }
 @media (max-width: 1000px) {
+  .sobre-container { flex-direction: column; align-items: stretch; gap: 24px; }
+  .sobre-left, .sobre-right { max-width: 100%; min-width: 0; }
+  .sobre-right { min-height: 0; }
+  .sobre-parceiros-box { max-width: 100%; grid-template-columns: 1fr 1fr; }
   .sobre-mvv-grid { grid-template-columns: repeat(2, 1fr); }
+  .sobre-parceiros-box { grid-template-columns: 1fr 1fr; }
+  .sobre-title { font-size: 2.2rem; }
 }
 @media (max-width: 720px) {
-  .sobre-section {
-    display: block;
-    min-height: unset;
-    padding-bottom: 0;
-    align-items: unset;
-    justify-content: unset;
-  }
-  .sobre-container {
-    display: block;
-    padding: 0 2px;
-    gap: 0;
-  }
-  .sobre-right {
-    display: none !important;
-  }
-  .sobre-left {
-    order: 1;
-    width: 100%;
-  }
-  .sobre-right {
-    order: 2;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    min-width: 0;
-    max-width: 100%;
-    min-height: 0;
-  }
-  .sobre-img-direita {
-    margin: 8px auto 0 auto;
-    display: block;
-    width: 100%;
-    max-width: 180px;
-  }
+  .sobre-section { padding: 24px 0; }
+  .sobre-container { padding: 0 6px; gap: 12px; }
   .sobre-title { font-size: 1.5rem; }
   .sobre-desc, .sobre-missao, .sobre-historia-texto p, .sobre-equipe-texto p, .sobre-parcerias-texto p { font-size: 1rem; }
-  .sobre-diferenciais-grid { gap: 10px 8px; grid-template-columns: 1fr; }
+  .sobre-diferenciais-grid { gap: 10px 8px; }
   .btn-cta { width: 100%; font-size: 1rem; padding: 0.7rem 0; }
-  .desktop-only { display: none !important; }
-  .mobile-only { display: block !important; }
+  .sobre-secao-header h2 { font-size: 1.3rem; gap: 8px; }
+  .sobre-secao-linha { width: 40px; height: 2px; }
+  .sobre-mvv-grid { grid-template-columns: 1fr; gap: 16px; }
+  .sobre-mvv-card { padding: 18px 8px; }
+  .sobre-mvv-icone { width: 48px; height: 48px; font-size: 1.2rem; margin-bottom: 12px; }
+  .sobre-mvv-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+  .sobre-mvv-card p, .sobre-mvv-card ul li { font-size: 0.95rem; }
+  .sobre-historia-timeline { gap: 12px; }
+  .sobre-timeline-dot { width: 10px; height: 10px; }
+  .sobre-timeline-item span { font-size: 0.8rem; }
+  .sobre-equipe-mensagem { padding: 12px; }
+  .sobre-equipe-mensagem p { font-size: 0.95rem; }
+  .sobre-parceiros-box { grid-template-columns: 1fr; padding: 18px 4px; gap: 10px; }
+  .sobre-parceiro-card { padding: 10px 4px; height: 80px; min-height: 80px; max-height: 90px; }
+  .sobre-parceiro-card h4 { font-size: 0.9rem; }
+  .sobre-parceiro-card p { font-size: 0.8rem; }
+}
+@media (max-width: 480px) {
+  .sobre-section { padding: 10px 0; }
+  .sobre-container { padding: 0 2px; gap: 6px; }
+  .sobre-title { font-size: 1.1rem; }
+  .sobre-desc, .sobre-missao, .sobre-historia-texto p, .sobre-equipe-texto p, .sobre-parcerias-texto p { font-size: 0.85rem; }
+  .btn-cta { font-size: 0.9rem; padding: 0.5rem 0; }
+  .sobre-secao-header h2 { font-size: 1rem; gap: 4px; }
+  .sobre-secao-linha { width: 24px; height: 2px; }
+  .sobre-mvv-card { padding: 10px 2px; }
+  .sobre-mvv-icone { width: 32px; height: 32px; font-size: 0.9rem; margin-bottom: 6px; }
+  .sobre-mvv-card h3 { font-size: 0.9rem; margin-bottom: 4px; }
+  .sobre-mvv-card p, .sobre-mvv-card ul li { font-size: 0.8rem; }
+  .sobre-historia-timeline { gap: 6px; }
+  .sobre-timeline-dot { width: 7px; height: 7px; }
+  .sobre-timeline-item span { font-size: 0.7rem; }
+  .sobre-equipe-mensagem { padding: 6px; }
+  .sobre-equipe-mensagem p { font-size: 0.8rem; }
+  .sobre-parceiros-box { grid-template-columns: 1fr; padding: 8px 2px; gap: 4px; }
+  .sobre-parceiro-card { padding: 4px 2px; height: 50px; min-height: 50px; max-height: 60px; }
+  .sobre-parceiro-card h4 { font-size: 0.7rem; }
+  .sobre-parceiro-card p { font-size: 0.6rem; }
+}
+@media (max-width: 320px) {
+  .sobre-title { font-size: 0.9rem; }
+  .btn-cta { font-size: 0.7rem; padding: 0.3rem 0; }
+  .sobre-secao-header h2 { font-size: 0.7rem; }
+  .sobre-secao-linha { width: 12px; height: 1px; }
+  .sobre-mvv-card { padding: 4px 1px; }
+  .sobre-mvv-icone { width: 18px; height: 18px; font-size: 0.5rem; margin-bottom: 2px; }
+  .sobre-mvv-card h3 { font-size: 0.6rem; margin-bottom: 2px; }
+  .sobre-mvv-card p, .sobre-mvv-card ul li { font-size: 0.5rem; }
+  .sobre-historia-timeline { gap: 2px; }
+  .sobre-timeline-dot { width: 3px; height: 3px; }
+  .sobre-timeline-item span { font-size: 0.4rem; }
+  .sobre-equipe-mensagem { padding: 2px; }
+  .sobre-equipe-mensagem p { font-size: 0.5rem; }
+  .sobre-parceiros-box { grid-template-columns: 1fr; padding: 2px 1px; gap: 2px; }
+  .sobre-parceiro-card { padding: 2px 1px; height: 24px; min-height: 24px; max-height: 30px; }
+  .sobre-parceiro-card h4 { font-size: 0.4rem; }
+  .sobre-parceiro-card p { font-size: 0.3rem; }
 }
 
 /* === SEÇÕES PROFISSIONAIS SEPARADAS === */
@@ -460,6 +539,7 @@
 /* === RESPONSIVO === */
 @media (max-width: 1000px) {
   .sobre-mvv-grid { grid-template-columns: repeat(2, 1fr); }
+  .sobre-parceiros-box { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 700px) {
   .sobre-secao { padding: 40px 0; }
