@@ -192,10 +192,11 @@
   }
   .sobre-title { font-size: 1.5rem; }
   .sobre-desc, .sobre-missao, .sobre-historia-texto p, .sobre-equipe-texto p, .sobre-parcerias-texto p { font-size: 1rem; }
-  .sobre-diferenciais-grid { gap: 10px 8px; grid-template-columns: 1fr; }
+  .sobre-diferenciais-grid { gap: 10px 8px; grid-template-columns: 1fr 1fr; }
   .btn-cta { width: 100%; font-size: 1rem; padding: 0.7rem 0; }
   .desktop-only { display: none !important; }
   .mobile-only { display: block !important; }
+  .sobre-parceiros-box { grid-template-columns: 1fr 1fr; gap: 10px 8px; }
 }
 
 /* === SEÇÕES PROFISSIONAIS SEPARADAS === */
@@ -465,7 +466,6 @@
   .sobre-secao { padding: 40px 0; }
   .sobre-secao-header h2 { font-size: 2rem; }
   .sobre-mvv-grid { grid-template-columns: 1fr; }
-  .sobre-parceiros-box { grid-template-columns: 1fr; }
   .sobre-historia-timeline { flex-direction: column; gap: 20px; }
   .sobre-equipe-mensagem { padding: 24px; }
   .sobre-equipe-mensagem p { font-size: 1.1rem; }
@@ -494,6 +494,8 @@
   .sobre-title { font-size: 1.1rem; }
   .sobre-desc, .sobre-missao, .sobre-historia-texto p, .sobre-equipe-texto p, .sobre-parcerias-texto p { font-size: 0.85rem; }
   .btn-cta { font-size: 0.9rem; padding: 0.5rem 0; }
+  .sobre-diferenciais-grid { grid-template-columns: 1fr 1fr; gap: 6px 4px; }
+  .sobre-parceiros-box { grid-template-columns: 1fr 1fr; gap: 6px 4px; }
 }
 @media (max-width: 320px) {
   .sobre-section {
@@ -518,4 +520,6 @@
   .sobre-title { font-size: 0.8rem; }
   .sobre-desc, .sobre-missao, .sobre-historia-texto p, .sobre-equipe-texto p, .sobre-parcerias-texto p { font-size: 0.7rem; }
   .btn-cta { font-size: 0.7rem; padding: 0.3rem 0; }
+  .sobre-diferenciais-grid { grid-template-columns: 1fr 1fr; gap: 2px 2px; }
+  .sobre-parceiros-box { grid-template-columns: 1fr 1fr; gap: 2px 2px; }
 } 
