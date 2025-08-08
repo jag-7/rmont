@@ -2,25 +2,50 @@
     background: linear-gradient(120deg, #07A8DA 60%, #0C76D6 100%);
     color: #fff;
     text-align: center;
-    padding: 3rem 1rem 2rem 1rem;
-  }
-  .servicos-hero h1 {
-    font-size: 2.2rem;
-    margin-bottom: 0.7rem;
-  }
-  .servicos-hero p {
-    font-size: 1.15rem;
-  }
-  .servicos-lista {
-    background: rgba(255,255,255,0.85);
-    margin-top: 2.5rem;
-    border-radius: 18px;
-    box-shadow: 0 8px 32px rgba(12,118,214,0.10);
-    padding: 2.5rem 0 2.5rem 0;
+    padding: 4rem 1.5rem 2.5rem 1.5rem;
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 6px 24px rgba(12,118,214,0.10);
     position: relative;
     overflow: hidden;
-  }
-  .servicos-lista::before {
+}
+.servicos-hero::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 6px;
+    background: linear-gradient(90deg, #07A8DA 60%, #0C76D6 100%);
+    border-radius: 6px;
+}
+.servicos-hero h1 {
+    font-size: 2.6rem;
+    margin-bottom: 1.1rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 4px 18px rgba(12,118,214,0.13);
+    border-left: 6px solid #fff;
+    padding-left: 1.2rem;
+}
+.servicos-hero p {
+    font-size: 1.22rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #e6f7ff;
+}
+.servicos-lista {
+    background: rgba(255,255,255,0.92);
+    margin-top: 2.5rem;
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(12,118,214,0.08);
+    padding: 3rem 0 3rem 0;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #e6f7ff;
+}
+.servicos-lista::before {
     content: '';
     position: absolute;
     top: -80px;
@@ -30,8 +55,8 @@
     background: radial-gradient(circle, #e3f2fd 0%, #fff 80%);
     opacity: 0.5;
     z-index: 0;
-  }
-  .servicos-lista::after {
+}
+.servicos-lista::after {
     content: '';
     position: absolute;
     bottom: -60px;
@@ -41,20 +66,23 @@
     background: radial-gradient(circle, #07A8DA 0%, #fff 80%);
     opacity: 0.13;
     z-index: 0;
-  }
-  .servicos-categoria {
+}
+.servicos-categoria {
     font-size: 2.1rem;
     color: #0C76D6;
     margin-top: 2.5rem;
     margin-bottom: 0.5rem;
-    font-weight: 800;
-    letter-spacing: 0.5px;
+    font-weight: 900;
+    letter-spacing: 1px;
     text-align: left;
     position: relative;
     z-index: 1;
     text-shadow: 0 2px 8px rgba(12,118,214,0.07);
-  }
-  .servicos-categoria-desc {
+    text-transform: uppercase;
+    border-left: 6px solid #07A8DA;
+    padding-left: 1.2rem;
+}
+.servicos-categoria-desc {
     font-size: 1.18rem;
     color: #3a3a3a;
     margin-bottom: 1.5rem;
@@ -62,35 +90,39 @@
     max-width: 700px;
     z-index: 1;
     position: relative;
-  }
-  .servicos-grid {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+.servicos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2.5rem;
     margin-top: 2.2rem;
     z-index: 1;
     position: relative;
-  }
-  .servico-item {
-    background: rgba(255,255,255,0.55);
+    padding: 0 1.5rem;
+}
+.servico-item {
+    background: rgba(255,255,255,0.75);
     border-radius: 22px;
     box-shadow: 0 8px 32px rgba(12,118,214,0.13), 0 1.5px 6px rgba(7,168,218,0.08);
     padding: 2.5rem 1.5rem 2rem 1.5rem;
     text-align: center;
     position: relative;
     overflow: hidden;
-    border: 1.5px solid rgba(12,118,214,0.08);
+    border-bottom: 4px solid #07A8DA;
+    border-top: 2px solid #e6f7ff;
     backdrop-filter: blur(6px);
     transition: transform 0.32s cubic-bezier(.4,2,.6,1), box-shadow 0.32s, border 0.32s;
     animation: fadeInUp 0.8s cubic-bezier(.4,2,.6,1);
-  }
-  .servico-item:hover {
+}
+.servico-item:hover {
     transform: translateY(-10px) scale(1.045);
     box-shadow: 0 20px 48px rgba(7,168,218,0.18), 0 2px 8px rgba(12,118,214,0.13);
     border: 1.5px solid #07A8DA;
-    background: rgba(255,255,255,0.75);
-  }
-  .servico-icon {
+    background: rgba(255,255,255,0.92);
+}
+.servico-icon {
     width: 70px;
     height: 70px;
     background: linear-gradient(135deg, #07A8DA 60%, #0C76D6 100%);
@@ -105,25 +137,25 @@
     border: 3px solid #fff;
     transition: box-shadow 0.2s, filter 0.2s;
     filter: drop-shadow(0 2px 8px #07A8DA33);
-  }
-  .servico-item:hover .servico-icon {
+}
+.servico-item:hover .servico-icon {
     box-shadow: 0 8px 32px #07A8DA44;
     filter: brightness(1.15) drop-shadow(0 4px 16px #07A8DA44);
-  }
-  .servico-item h3 {
+}
+.servico-item h3 {
+    font-size: 1.25rem;
+    font-weight: 900;
     color: #0C76D6;
     margin-bottom: 0.7rem;
-    font-size: 1.35rem;
-    font-weight: 800;
-    letter-spacing: 0.2px;
-    text-shadow: 0 1px 4px rgba(12,118,214,0.06);
-  }
-  .servico-item p {
-    font-size: 1.13rem;
-    color: #232323;
-    margin-bottom: 0.2rem;
-    line-height: 1.6;
-  }
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.servico-item p {
+    font-size: 1.09rem;
+    color: #222;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
   @keyframes fadeInUp {
     from {
       opacity: 0;
