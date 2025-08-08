@@ -1,6 +1,6 @@
 /* Hero Section */
 .hero {
-  background: linear-gradient(120deg, rgba(12, 118, 214, 0.55) 60%, rgba(7, 168, 218, 0.55) 100%), url('../hero.jpg');
+  background: linear-gradient(120deg, rgba(12, 118, 214, 0.50) 60%, rgba(7, 168, 218, 0.50) 100%), url('../hero.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
