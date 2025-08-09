@@ -20,121 +20,80 @@ if (menuToggle && navLinks) {
 const produtos = [
   {
     id: 1,
-    nome: 'HIPOCLORITO DE SÓDIO 25L (Líquida)',
-    preco: '75 000,00 Kz',
-    precoTonelada: '3 500 000,00 Kz',
-    descricao: 'Desinfetante líquido para tratamento de água. ',
-    categoria: 'quimicos',
-    imagem: 'fitro.png'
+    nome: 'Sistema de Purificação de Água',
+    descricao: 'Sistema completo para purificação de água.',
+    categoria: 'equipamentos',
+    imagem: 'produtos/Sistema de purificação de água.jpg'
   },
   {
     id: 2,
-    nome: 'HIPOCLORITO DE SÓDIO 190L (Líquida)',
-    preco: '190 000,00 Kz',
-    descricao: 'Desinfetante líquido para grandes volumes de água.',
-    categoria: 'quimicos',
-    imagem: 'fitro.png'
+    nome: 'Sistema de Osmose Reversa Industrial',
+    descricao: 'Sistema de osmose reversa para uso industrial e comercial.',
+    categoria: 'equipamentos',
+    imagem: 'produtos/Sistema de Osmose Reversa Industrial ou Comercial.jpg'
   },
   {
     id: 3,
-    nome: 'ANTI SCALANT RO 391-AF 25L (Líquida)',
-    preco: '52 000,00 Kz',
-    descricao: 'Produto para prevenir incrustações em sistemas de osmose reversa.',
-    categoria: 'quimicos',
-    imagem: 'fitro.png'
+    nome: 'Sistema de Osmose Reversa Residencial',
+    descricao: 'Sistema de osmose reversa para uso residencial.',
+    categoria: 'equipamentos',
+    imagem: 'produtos/Sistema de Osmose Reversa Residencial.jpg'
   },
   {
     id: 4,
-    nome: 'HIDRÓXIDO DE SÓDIO 25Kg (Saco)',
-    preco: '118 000,00 Kz',
-    precoTonelada: '2 150 000,00 Kz',
-    descricao: 'Base forte para ajuste de pH.',
-    categoria: 'quimicos',
-    imagem: 'fitro.png'
+    nome: 'Sistema de Filtração Industrial',
+    descricao: 'Sistema de filtração para uso industrial.',
+    categoria: 'equipamentos',
+    imagem: 'produtos/Sistema de Filtração Industrial..jpg'
   },
   {
     id: 5,
-    nome: 'HIDRÓXIDO DE SÓDIO 25L (Líquida)',
-    preco: '35 000,00 Kz',
-    descricao: 'Base forte líquida para ajuste de pH.',
-    categoria: 'quimicos',
-    imagem: 'fitro.png'
+    nome: 'Sistema de Filtração de Múltiplos Tanques',
+    descricao: 'Sistema de filtração com múltiplos tanques.',
+    categoria: 'equipamentos',
+    imagem: 'produtos/Sistema de Filtração de Múltiplos Tanques.jpg'
   },
   {
     id: 6,
-    nome: 'HIDRÓXIDO DE CÁLCIO 25Kg (Saco)',
-    preco: '35 000,00 Kz',
-    precoTonelada: '1 350 000,00 Kz',
-    descricao: 'Agente alcalinizante para tratamento de água.',
-    categoria: 'quimicos',
-    imagem: 'fitro.png'
+    nome: 'Filtro de Água Big Blue 20',
+    descricao: 'Filtro de água de alta capacidade.',
+    categoria: 'equipamentos',
+    imagem: 'produtos/Filtro de Água Big Blue 20.jpg'
   },
   {
     id: 7,
-    nome: 'ALGICIDA 5L (Bidon)',
-    preco: '---',
-    descricao: 'Produto para controle de algas em sistemas de água.',
-    categoria: 'quimicos',
-    imagem: 'fitro.png'
+    nome: 'Filtro de Sedimento',
+    descricao: 'Filtro para remoção de partículas sólidas.',
+    categoria: 'consumiveis',
+    imagem: 'produtos/FILTRO DE SEDIMENTO.jpg'
   },
   {
     id: 8,
-    nome: 'FLOCULANTE C577',
-    preco: '4 360 000,00 Kz',
-    precoTonelada: '3 200 000,00 Kz',
-    descricao: 'Auxilia na remoção de partículas em suspensão.',
+    nome: 'Hipoclorito de Sódio',
+    descricao: 'Desinfetante para tratamento de água.',
     categoria: 'quimicos',
-    imagem: 'fitro.png'
+    imagem: 'produtos/HIPOCLORITO DE SÓDIO.jpg'
   },
   {
     id: 9,
-    nome: 'PEROXIDO DE HIDROGÊNIO 1,2T (Balde)',
-    preco: '50 000,00 Kz',
-    descricao: 'Agente oxidante para desinfecção de água.',
+    nome: 'Carvão Ativado',
+    descricao: 'Material filtrante para remoção de impurezas e odores.',
     categoria: 'quimicos',
-    imagem: 'fitro.png'
+    imagem: 'produtos/CARVÃO ATIVADO.jpg'
   },
   {
     id: 10,
-    nome: 'SULFATO DE ALUMÍNIO 50Kg (Saco)',
-    preco: '170 000,00 Kz',
-    precoTonelada: '1 750 000,00 Kz',
-    descricao: 'Coagulante para clarificação de água.',
+    nome: 'Floculante',
+    descricao: 'Auxilia na remoção de partículas em suspensão.',
     categoria: 'quimicos',
-    imagem: 'fitro.png'
+    imagem: 'produtos/FLOCULANTE.jpg'
   },
   {
     id: 11,
-    nome: 'CARVÃO ATIVADO 25Kg (Saco)',
-    preco: '380 000,00 Kz',
-    descricao: 'Material filtrante para remoção de impurezas e odores.',
-    categoria: 'consumiveis',
-    imagem: 'fitro.png'
-  },
-  {
-    id: 12,
-    nome: 'RESINA CATEÓNICA 25Kg (Saco)',
-    preco: '25 000,00 Kz',
-    precoTonelada: '6 600 000,00 Kz',
+    nome: 'Resina Catiônica',
     descricao: 'Utilizada em sistemas de abrandamento e desmineralização.',
-    categoria: 'consumiveis',
-    imagem: 'fitro.png'
-  },
-  {
-    id: 13,
-    nome: 'FILTRO DE SEDIMENTO PP 2,5X40 (Unidade)',
-    preco: '700 000,00 Kz',
-    descricao: 'Filtro para remoção de partículas sólidas.',
-    categoria: 'consumiveis',
-    imagem: 'fitro.png'
-  },
-  {
-    id: 14,
-    nome: 'SISTEMA DE PURIFICAÇÃO DE ÁGUA',
-    preco: '---',
-    descricao: 'Sistema completo para purificação de água.',
-    categoria: 'equipamentos',
-    imagem: 'fitro.png'
+    categoria: 'quimicos',
+    imagem: 'produtos/RESINA CATEÓNICA.jpg'
   }
 ];
 
@@ -148,17 +107,17 @@ const paginacao = document.getElementById('produtos-paginacao');
 const buscaInput = document.getElementById('busca-produto');
 const filtroBtns = document.querySelectorAll('.filtro-btn');
 
-// --- Carrinho ---
+// --- Lista de Solicitações ---
 let carrinho = [];
 
-// Carregar carrinho do localStorage ao iniciar
+// Carregar lista do localStorage ao iniciar
 if (localStorage.getItem('carrinho')) {
   try {
     carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
   } catch (e) { carrinho = []; }
 }
 
-function salvarCarrinho() {
+function salvarLista() {
   localStorage.setItem('carrinho', JSON.stringify(carrinho));
 }
 
@@ -172,37 +131,34 @@ function renderizarPainelCarrinho() {
   }
   painel.innerHTML = `
     <div class="carrinho-header">
-      <span class="carrinho-titulo">Carrinho</span>
+      <span class="carrinho-titulo">Lista de Solicitações</span>
       <button class="carrinho-fechar">&times;</button>
     </div>
     <div class="carrinho-itens">
-      ${carrinho.length === 0 ? '<p class="carrinho-vazio">Seu carrinho está vazio.</p>' : carrinho.map(item => `
+      ${carrinho.length === 0 ? '<p class="carrinho-vazio">Sua lista de solicitações está vazia.</p>' : carrinho.map(item => `
         <div class="carrinho-item">
           <img src="${item.imagem}" alt="${item.nome}" class="carrinho-item-img-grande">
           <div class="carrinho-item-info">
             <div class="carrinho-item-nome">${item.nome}</div>
-            <div class="carrinho-item-preco">${item.precoSelecionado || item.preco}</div>
-            <div class="carrinho-item-qtd">
-              <input type="number" min="1" value="${item.quantidade}" data-id="${item.id}" data-preco="${item.precoSelecionado || item.preco}" class="carrinho-qtd-input">
-              <span>unid.</span>
-            </div>
           </div>
-          <button class="carrinho-remover" data-id="${item.id}" data-preco="${item.precoSelecionado || item.preco}">&times;</button>
+          <button class="carrinho-remover" data-id="${item.id}">&times;</button>
         </div>
       `).join('')}
     </div>
     <div class="carrinho-footer">
-      <div class="carrinho-total">Total: <span id="carrinho-total"></span></div>
       <form id="carrinho-form">
         <input type="text" id="carrinho-nome" placeholder="Seu nome" required style="margin-bottom:0.5rem;width:100%;padding:0.5rem;">
-        <input type="text" id="carrinho-endereco" placeholder="Endereço de entrega" required style="margin-bottom:0.5rem;width:100%;padding:0.5rem;">
-        <input type="tel" id="carrinho-telefone" placeholder="Telefone" required style="margin-bottom:0.5rem;width:100%;padding:0.5rem;">
-        <button type="submit" class="carrinho-finalizar">Finalizar compra</button>
+        <input type="email" id="carrinho-email" placeholder="Seu e-mail" required style="margin-bottom:0.5rem;width:100%;padding:0.5rem;">
+        <input type="tel" id="carrinho-telefone" placeholder="Telefone" style="margin-bottom:0.5rem;width:100%;padding:0.5rem;">
+        <button type="submit" class="carrinho-finalizar">Enviar solicitações</button>
       </form>
+      <div style="margin-top:1rem;display:flex;gap:0.5rem;">
+        <button id="enviar-whatsapp" class="btn-lista" style="background:#25D366;">WhatsApp</button>
+        <button id="enviar-email" class="btn-lista" style="background:#EA4335;">Gmail/E-mail</button>
+      </div>
     </div>
   `;
   painel.classList.add('aberto','animar-carrinho');
-  atualizarTotalCarrinho();
 
   // Fechar painel
   painel.querySelector('.carrinho-fechar').onclick = () => painel.classList.remove('aberto');
@@ -210,23 +166,8 @@ function renderizarPainelCarrinho() {
   painel.querySelectorAll('.carrinho-remover').forEach(btn => {
     btn.onclick = () => {
       const id = parseInt(btn.getAttribute('data-id'));
-      const preco = btn.getAttribute('data-preco');
-      carrinho = carrinho.filter(item => !(item.id === id && (item.precoSelecionado || item.preco) === preco));
-      salvarCarrinho();
-      renderizarCarrinhoIcone();
-      renderizarPainelCarrinho();
-    };
-  });
-  // Alterar quantidade
-  painel.querySelectorAll('.carrinho-qtd-input').forEach(input => {
-    input.onchange = () => {
-      const id = parseInt(input.getAttribute('data-id'));
-      const preco = input.getAttribute('data-preco');
-      const idx = carrinho.findIndex(item => item.id === id && (item.precoSelecionado || item.preco) === preco);
-      let novaQtd = parseInt(input.value) || 1;
-      if (novaQtd < 1) novaQtd = 1;
-      carrinho[idx].quantidade = novaQtd;
-      salvarCarrinho();
+      carrinho = carrinho.filter(item => item.id !== id);
+      salvarLista();
       renderizarCarrinhoIcone();
       renderizarPainelCarrinho();
     };
@@ -234,11 +175,58 @@ function renderizarPainelCarrinho() {
   // Finalizar compra
   painel.querySelector('#carrinho-form').onsubmit = (e) => {
     e.preventDefault();
-    alert('Compra finalizada! (simulação)');
+    const nome = painel.querySelector('#carrinho-nome').value;
+    const email = painel.querySelector('#carrinho-email').value;
+    if (!email) {
+      alert('Por favor, informe seu e-mail.');
+      return;
+    }
+    let mensagem = `Olá! Gostaria de solicitar orçamento para:\n`;
+    carrinho.forEach(item => {
+      mensagem += `- ${item.nome}\n`;
+    });
+    mensagem += `\nNome: ${nome}\nE-mail: ${email}`;
+    const url = `https://wa.me/244944385452?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, '_blank');
     carrinho = [];
-    salvarCarrinho();
+    salvarLista();
     renderizarCarrinhoIcone();
     renderizarPainelCarrinho();
+  };
+
+  // Envio WhatsApp
+  painel.querySelector('#enviar-whatsapp').onclick = () => {
+    const nome = painel.querySelector('#carrinho-nome').value;
+    const email = painel.querySelector('#carrinho-email').value;
+    if (!email) {
+      alert('Por favor, informe seu e-mail.');
+      return;
+    }
+    let mensagem = `Olá! Gostaria de solicitar orçamento para:\n`;
+    carrinho.forEach(item => {
+      mensagem += `- ${item.nome}\n`;
+    });
+    mensagem += `\nNome: ${nome}\nE-mail: ${email}`;
+    const url = `https://wa.me/244944385452?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, '_blank');
+  };
+
+  // Envio E-mail
+  painel.querySelector('#enviar-email').onclick = () => {
+    const nome = painel.querySelector('#carrinho-nome').value;
+    const email = painel.querySelector('#carrinho-email').value;
+    if (!email) {
+      alert('Por favor, informe seu e-mail.');
+      return;
+    }
+    let assunto = 'Solicitação de Orçamento';
+    let corpo = `Olá! Gostaria de solicitar orçamento para:\n`;
+    carrinho.forEach(item => {
+      corpo += `- ${item.nome}\n`;
+    });
+    corpo += `\nNome: ${nome}\nE-mail: ${email}`;
+    const mailto = `mailto:comercial@rmont-business.com?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
+    window.open(mailto, '_blank');
   };
 }
 
@@ -263,11 +251,11 @@ function ativarPainelCarrinho() {
   }
 }
 
-function mostrarFeedbackCarrinho(nomeProduto) {
-  let feedback = document.getElementById('carrinho-feedback');
+function mostrarFeedbackLista(nomeProduto) {
+  let feedback = document.getElementById('lista-feedback');
   if (!feedback) {
     feedback = document.createElement('div');
-    feedback.id = 'carrinho-feedback';
+    feedback.id = 'lista-feedback';
     feedback.style.position = 'fixed';
     feedback.style.top = '80px';
     feedback.style.right = '40px';
@@ -279,7 +267,7 @@ function mostrarFeedbackCarrinho(nomeProduto) {
     feedback.style.zIndex = '2000';
     document.body.appendChild(feedback);
   }
-  feedback.textContent = `Adicionado ao carrinho: ${nomeProduto}`;
+  feedback.textContent = `Adicionado à lista: ${nomeProduto}`;
   feedback.style.display = 'block';
   setTimeout(() => { feedback.style.display = 'none'; }, 1500);
 }
@@ -311,54 +299,28 @@ function renderizarProdutos() {
     card.className = 'produto-card';
     card.setAttribute('data-categoria', produto.categoria);
 
-    // Lógica para radio buttons de preço
-    let precoHtml = '';
-    if (produto.precoTonelada) {
-      precoHtml = `
-        <div class="produto-preco-opcoes">
-          <label><input type="radio" name="preco-${produto.id}" value="unidade" checked> Unidade</label>
-          <label><input type="radio" name="preco-${produto.id}" value="tonelada"> Tonelada</label>
-        </div>
-        <div class="produto-preco-valor" id="preco-valor-${produto.id}"><strong>${produto.preco}</strong></div>
-      `;
-    } else {
-      precoHtml = `<div class="produto-preco-valor"><strong>${produto.preco}</strong></div>`;
-    }
-
     card.innerHTML = `
       <img src="${produto.imagem}" alt="${produto.nome}">
       <h3>${produto.nome}</h3>
-      ${precoHtml}
+      <div class="produto-preco">Preço sobre consulta</div>
       ${produto.descricao ? `<div class='produto-descricao'>${produto.descricao}</div>` : ''}
-      <div class="produto-quantidade">Qt. <input type="number" min="1" value="1"></div>
       <div class="produto-botoes">
-        <button class="btn-carrinho">Adicionar ao carrinho</button>
-        <button class="btn-comprar">Comprar agora</button>
+        <button class="btn-orcamento" data-id="${produto.id}">Solicitar orçamento</button>
+        <button class="btn-lista" data-id="${produto.id}">Adicionar à lista</button>
       </div>
     `;
     grid.appendChild(card);
 
-    // Adicionar evento para radio buttons de preço
-    if (produto.precoTonelada) {
-      const radios = card.querySelectorAll(`input[name="preco-${produto.id}"]`);
-      const precoValorDiv = card.querySelector(`#preco-valor-${produto.id}`);
-      radios.forEach(radio => {
-        radio.addEventListener('change', (e) => {
-          if (e.target.value === 'unidade') {
-            precoValorDiv.innerHTML = `<strong>${produto.preco}</strong>`;
-          } else {
-            precoValorDiv.innerHTML = `<strong>${produto.precoTonelada}</strong>`;
-          }
-        });
-      });
-    }
+    // Evento para botão de orçamento individual
+    const btnOrcamento = card.querySelector('.btn-orcamento');
+    btnOrcamento.addEventListener('click', () => {
+      solicitarOrcamento(produto);
+    });
 
-    // Evento para botão adicionar ao carrinho
-    const btnCarrinho = card.querySelector('.btn-carrinho');
-    const inputQtd = card.querySelector('.produto-quantidade input');
-    btnCarrinho.addEventListener('click', () => {
-      const qtd = parseInt(inputQtd.value) || 1;
-      adicionarAoCarrinho(produto, qtd);
+    // Evento para botão de adicionar à lista
+    const btnLista = card.querySelector('.btn-lista');
+    btnLista.addEventListener('click', () => {
+      adicionarALista(produto);
     });
   });
 }
@@ -402,26 +364,34 @@ if (buscaInput) {
   });
 }
 
-// Atualizar lógica de adicionar ao carrinho para salvar preço selecionado e atualizar painel se aberto
-function adicionarAoCarrinho(produto, quantidade) {
-  let precoSelecionado = produto.preco;
-  if (produto.precoTonelada) {
-    const radio = document.querySelector(`input[name=\"preco-${produto.id}\"]:checked`);
-    if (radio && radio.value === 'tonelada') precoSelecionado = produto.precoTonelada;
-  }
-  const idx = carrinho.findIndex(item => item.id === produto.id && item.precoSelecionado === precoSelecionado);
-  if (idx > -1) {
-    carrinho[idx].quantidade += quantidade;
-  } else {
-    carrinho.push({ ...produto, quantidade, precoSelecionado });
-  }
-  salvarCarrinho();
-  renderizarCarrinhoIcone();
-  mostrarFeedbackCarrinho(produto.nome);
-  // Se painel estiver aberto, atualizar
-  const painel = document.getElementById('painel-carrinho');
-  if (painel && painel.classList.contains('aberto')) {
-    renderizarPainelCarrinho();
+// Função para solicitar orçamento individual
+function solicitarOrcamento(produto) {
+  // Solicita nome e e-mail do usuário
+  const nome = prompt("Informe seu nome para o orçamento:");
+  if (!nome) return;
+  const email = prompt("Informe seu e-mail para contato:");
+  if (!email) return;
+
+  // Monta a mensagem
+  let mensagem = `Olá! Gostaria de solicitar orçamento para:\n- ${produto.nome}\n\nNome: ${nome}\nE-mail: ${email}`;
+  // Abre o WhatsApp
+  const url = `https://wa.me/244944385452?text=${encodeURIComponent(mensagem)}`;
+  window.open(url, '_blank');
+}
+
+// Função para adicionar à lista de solicitações
+function adicionarALista(produto) {
+  const idx = carrinho.findIndex(item => item.id === produto.id);
+  if (idx === -1) {
+    carrinho.push({ ...produto });
+    salvarLista();
+    renderizarCarrinhoIcone();
+    mostrarFeedbackLista(produto.nome);
+    // Se painel estiver aberto, atualizar
+    const painel = document.getElementById('painel-carrinho');
+    if (painel && painel.classList.contains('aberto')) {
+      renderizarPainelCarrinho();
+    }
   }
 }
 
@@ -433,10 +403,10 @@ function renderizarCarrinhoIcone() {
     iconeContainer.id = 'carrinho-icone-container';
     document.body.prepend(iconeContainer);
   }
-  const totalItens = carrinho.reduce((acc, item) => acc + item.quantidade, 0);
+  const totalItens = carrinho.length;
   iconeContainer.innerHTML = `
     <div id="carrinho-icone" style="position:fixed;bottom:32px;right:32px;z-index:1000;cursor:pointer;background:#fff;border-radius:50%;box-shadow:0 2px 8px rgba(12,118,214,0.10);width:52px;height:52px;display:flex;align-items:center;justify-content:center;">
-      <span style="font-size:2rem;">🛒</span>
+      <span style="font-size:2rem;">📋</span>
       <span id="carrinho-contador" style="position:absolute;top:10px;right:10px;background:#0C76D6;color:#fff;font-size:0.95rem;font-weight:bold;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;">${totalItens}</span>
     </div>
   `;
@@ -446,4 +416,4 @@ function renderizarCarrinhoIcone() {
 // Inicialização
 renderizarProdutos();
 renderizarPaginacao();
-renderizarCarrinhoIcone(); 
+renderizarCarrinhoIcone();

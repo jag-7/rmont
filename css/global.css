@@ -19,7 +19,7 @@ header {
 }
 
 .linha-azul-bottom {
-  width: 100vw;
+  width: 99vw;
   height: 6px;
   background: #e6f7ff;
   margin: 0;
@@ -73,11 +73,11 @@ header {
   transition: background 0.2s, color 0.2s;
 }
 .btn-primary {
-  background: #07A8DA;
+  background: #0C76D6;
   color: #fff;
 }
 .btn-primary:hover {
-  background: #0C76D6;
+  background: #07A8DA;
 }
 .btn-secondary {
   background: #fff;

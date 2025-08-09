@@ -265,37 +265,118 @@
     font-size: 2rem;
     margin-bottom: 1rem;
   }
-  /* Serviços em Destaque (Home) */
+  /* Serviços em Destaque (Home) - MODERNIZADO */
   .servicos-destaque {
-    background: #f8f9fa;
-    margin-top: 2rem;
-    padding-bottom: 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f0f8ff 100%);
+
+    padding: 4rem 2rem 3rem 2rem;
+    position: relative;
+    overflow: hidden;
   }
+  
+  
   .servicos-destaque h2 {
     color: #0C76D6;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    position: relative;
   }
+  
+  .servicos-destaque h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #0C76D6, #07A8DA);
+    border-radius: 2px;
+  }
+  
   .servicos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
   }
+  
   .servico-item {
     background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(12,118,214,0.06);
-    padding: 1.5rem 1rem;
-    text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(12,118,214,0.08);
+    padding: 2.5rem 2rem;
+    text-align: left;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(12,118,214,0.08);
   }
+  
+  .servico-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(12,118,214,0.05), transparent);
+    transition: left 0.6s ease;
+  }
+  
   .servico-item:hover {
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 6px 24px rgba(7,168,218,0.10);
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(12,118,214,0.15);
+    border-color: rgba(12,118,214,0.2);
   }
+  
+  .servico-item:hover::before {
+    left: 100%;
+  }
+  
   .servico-item h3 {
-    color: #07A8DA;
-    margin-bottom: 0.7rem;
+    color: #0C76D6;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 0.8rem;
+  }
+  
+  .servico-item h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, #0C76D6, #07A8DA);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+  
+  .servico-item:hover h3::after {
+    width: 60px;
+  }
+  
+  .servico-item p {
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .servico-item:nth-child(odd) {
+    background: linear-gradient(135deg, #ffffff 0%, rgba(12,118,214,0.02) 100%);
+  }
+  
+  .servico-item:nth-child(even) {
+    background: linear-gradient(135deg, #ffffff 0%, rgba(7,168,218,0.02) 100%);
   }
   /* Clientes e Setores Atendidos */
   .clientes-setores {
@@ -342,9 +423,11 @@
   
   .clientes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.5rem;
     margin-bottom: 2.5rem;
+    max-width: 100%;
+    overflow: hidden;
   }
   
   .cliente-item {
@@ -578,7 +661,7 @@
     padding: 1.2rem 0.5rem;
     text-align: center;
     color: #07A8DA;
-    font-weight: 700;
+    font-weight: 70;
     font-size: 1.1rem;
     box-shadow: 0 1px 4px rgba(12,118,214,0.03);
     min-width: 120px;
@@ -760,7 +843,7 @@
       font-size: 0.65rem;
     }
     .clientes-setores {
-      padding: 2rem 1rem 2rem 1rem;
+      padding: 2rem 0.5rem 2rem 0.5rem;
       margin-top: 2rem;
     }
     .clientes-setores h2 {
@@ -768,13 +851,15 @@
       margin-bottom: 2rem;
     }
     .clientes-grid {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: 1fr;
       gap: 1rem;
       margin-bottom: 2rem;
+      padding: 0 0.5rem;
     }
     .cliente-item {
-      padding: 1.2rem 1rem;
+      padding: 1.2rem 0.8rem;
       font-size: 1rem;
+      margin: 0 0.2rem;
     }
     .cliente-item i {
       font-size: 1.5rem;
@@ -791,20 +876,21 @@
     .nossos-clientes h2 {
       font-size: 1.1rem;
     }
-    .servicos-grid,
-    .clientes-grid,
-    .diferenciais-grid,
-    .clientes-logos-grid {
-      grid-template-columns: 1fr;
-      gap: 0.5rem;
-    }
-    .servico-item,
-    .cliente-item,
-    .diferencial-item,
-    .cliente-logo-item {
-      padding: 0.7rem 0.3rem;
-      font-size: 0.95rem;
-    }
+      .servicos-grid,
+  .clientes-grid,
+  .diferenciais-grid,
+  .clientes-logos-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .servico-item,
+  .cliente-item,
+  .diferencial-item,
+  .cliente-logo-item {
+    padding: 0.7rem 0.3rem;
+    font-size: 0.95rem;
+    border-radius: 12px;
+  }
     .cta-final {
       padding: 1.2rem 0.2rem 1rem 0.2rem;
     }
@@ -938,39 +1024,23 @@
   border-radius: 0 0 18px 18px;
   margin-top: 2.5rem;
 }
-.clientes-carrossel {
+.clientes-logo-container {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 1.2rem;
-  margin-top: 1.5rem;
-}
-.clientes-carrossel-lista {
-  background: #fff;
-  border: 1.5px solid #e6f7ff;
-  border-radius: 12px;
-  padding: 1.1rem 2.2rem;
-  display: flex;
-  gap: 2.2rem;
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: #222;
   align-items: center;
+  margin-top: 2rem;
+  padding: 0 1rem;
 }
-.carrossel-btn {
-  background: #fff;
-  border: 1.5px solid #0C76D6;
-  color: #0C76D6;
-  font-size: 1.5rem;
-  border-radius: 8px;
-  width: 38px;
-  height: 38px;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+.clientes-logo-img {
+  max-width: 70%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(12, 118, 214, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.carrossel-btn:hover {
-  background: #0C76D6;
-  color: #fff;
+.clientes-logo-img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 30px rgba(12, 118, 214, 0.15);
 }  
 
   @media (max-width: 720px) {
@@ -994,6 +1064,13 @@
     .hero-cards {
       display: none !important;
     }
+    .clientes-logo-container {
+      margin-top: 1.5rem;
+      padding: 0 0.5rem;
+    }
+      .clientes-logo-img {
+    max-width: 75%;
+  }
   .servicos-grid-home, .servicos-grid {
     flex-direction: column;
     gap: 1.2rem;
@@ -1004,6 +1081,7 @@
     max-width: 100%;
     font-size: 0.98rem;
     padding: 1.2rem 0.7rem 1rem 0.7rem;
+    border-radius: 16px;
   }
   .secao-titulo, .servicos-home h2, .servicos-destaque h2 {
     font-size: 1.2rem;
@@ -1042,12 +1120,25 @@
     .hero-destaques {
       display: none !important;
     }
+    .clientes-home {
+      padding: 2rem 0.8rem 2rem 0.8rem;
+      margin-top: 2rem;
+    }
+    .clientes-logo-container {
+      margin-top: 1.5rem;
+      padding: 0 0.3rem;
+    }
+    .clientes-logo-img {
+      max-width: 85%;
+    }
   .secao-titulo, .servicos-home h2, .servicos-destaque h2 {
     font-size: 1rem;
   }
   .servico-card-home, .servico-item {
     font-size: 0.92rem;
     padding: 0.7rem 0.3rem 0.6rem 0.3rem;
+    border-radius: 14px;
+    margin: 0 0.5rem;
   }
 }
 
@@ -1098,8 +1189,20 @@
     font-size: 1rem;
     padding: 1rem;
   }
+  .clientes-home {
+    padding: 1.5rem 0.5rem 1.5rem 0.5rem;
+    margin-top: 1.5rem;
+  }
+  .clientes-logo-container {
+    margin-top: 1.2rem;
+    padding: 0 0.2rem;
+  }
+  .clientes-logo-img {
+    max-width: 85%;
+  }
   .secao-titulo, .servicos-home h2, .servicos-destaque h2 {
     font-size: 0.85rem;
+    margin: 1.5rem 0 1rem 0;
   }
 }  
 
