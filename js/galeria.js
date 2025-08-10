@@ -79,7 +79,102 @@ class GaleriaProjetos {
         }
     }
 
-   
+    // Configurar interações do usuário
+    setupInteracoes() {
+        const trabalhos = document.querySelectorAll('.trabalho-item');
+        trabalhos.forEach(trabalho => {
+            // Pausar autoplay quando o usuário interage
+            trabalho.addEventListener('mouseenter', () => {
+                if (this.autoplayAtivo) {
+                    this.pararAutoplay(trabalho);
+                }
+            });
+            
+            trabalho.addEventListener('mouseleave', () => {
+                if (this.autoplayAtivo) {
+                    this.iniciarAutoplay(trabalho);
+                }
+            });
+            
+            // Pausar autoplay quando clicar nos controles
+            const controles = trabalho.querySelectorAll('.galeria-controls button, .galeria-indicators button');
+            controles.forEach(controle => {
+                controle.addEventListener('click', () => {
+                    if (this.autoplayAtivo) {
+                        this.pararAutoplay(trabalho);
+                        setTimeout(() => {
+                            if (this.autoplayAtivo) {
+                                this.iniciarAutoplay(trabalho);
+                            }
+                        }, 3000); // Retomar após 3 segundos
+                    }
+                });
+            });
+        });
+    }
+
+    // Iniciar autoplay para um trabalho específico
+    iniciarAutoplay(trabalhoItem) {
+        if (this.autoplayAtivo && !this.intervalos.has(trabalhoItem)) {
+            const intervalo = setInterval(() => {
+                this.proximaImagem(trabalhoItem);
+            }, this.tempoTransicao);
+            
+            this.intervalos.set(trabalhoItem, intervalo);
+        }
+    }
+
+    // Parar autoplay para um trabalho específico
+    pararAutoplay(trabalhoItem) {
+        const intervalo = this.intervalos.get(trabalhoItem);
+        if (intervalo) {
+            clearInterval(intervalo);
+            this.intervalos.delete(trabalhoItem);
+        }
+    }
+
+    // Pausar autoplay (quando vídeo está rodando)
+    pausarAutoplay(trabalhoItem) {
+        this.pararAutoplay(trabalhoItem);
+    }
+
+    // Retomar autoplay (quando vídeo para)
+    retomarAutoplay(trabalhoItem) {
+        if (this.autoplayAtivo) {
+            this.iniciarAutoplay(trabalhoItem);
+        }
+    }
+
+    // Ativar/desativar autoplay global
+    toggleAutoplay() {
+        this.autoplayAtivo = !this.autoplayAtivo;
+        const autoplayBtn = document.getElementById('autoplay-toggle');
+        const autoplayIcon = document.getElementById('autoplay-icon');
+        const autoplayText = document.getElementById('autoplay-text');
+
+        if (this.autoplayAtivo) {
+            autoplayIcon.className = 'fas fa-pause';
+            autoplayText.textContent = 'Pausar Autoplay';
+            this.iniciarAutoplayEmTodos();
+        } else {
+            autoplayIcon.className = 'fas fa-play';
+            autoplayText.textContent = 'Ativar Autoplay';
+            this.pararAutoplayEmTodos();
+        }
+    }
+
+    // Iniciar autoplay em todos os trabalhos
+    iniciarAutoplayEmTodos() {
+        const trabalhos = document.querySelectorAll('.trabalho-item');
+        trabalhos.forEach(trabalho => this.iniciarAutoplay(trabalho));
+    }
+
+    // Parar autoplay em todos os trabalhos
+    pararAutoplayEmTodos() {
+        const trabalhos = document.querySelectorAll('.trabalho-item');
+        trabalhos.forEach(trabalho => this.pararAutoplay(trabalho));
+    }
+
     // Mudar slide (navegação manual)
     mudarSlide(button, direcao) {
         const trabalhoItem = button.closest('.trabalho-item');
