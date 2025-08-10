@@ -81,42 +81,61 @@
         <!-- Bloco Direito: Formulário -->
         <div class="contato-form-bloco">
           <h2>Solicite seu Orçamento</h2>
-          <form class="formulario-contato">
-            <div class="form-group">
-              <label for="nome">Nome Completo *</label>
-              <input type="text" id="nome" name="nome" required>
-            </div>
-            <div class="form-group">
-              <label for="empresa">Empresa/Instituição</label>
-              <input type="text" id="empresa" name="empresa">
-            </div>
-            <div class="form-group">
-              <label for="telefone">Telefone *</label>
-              <input type="tel" id="telefone" name="telefone" required>
-            </div>
-            <div class="form-group">
-              <label for="email">E-mail *</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-              <label for="tipo-servico">Tipo de Serviço</label>
-              <select id="tipo-servico" name="tipo-servico" required>
-                <option value="">Selecione um serviço</option>
-                <option>Tratamento de Água Doméstica</option>
-                <option>Tratamento de Água Industrial</option>
-                <option>Osmose Reversa</option>
-                <option>Tratamento de Efluentes</option>
-                <option>Piscinas</option>
-                <option>Manutenção e Assistência Técnica</option>
-                <option>Outro</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="mensagem">Descreva suas Necessidades *</label>
-              <textarea id="mensagem" name="mensagem" rows="4" required placeholder="Descreva detalhadamente suas necessidades, localização do projeto e qualquer informação relevante"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Enviar Solicitação</button>
-          </form>
+                  <form class="formulario-contato">
+          <div class="form-group">
+            <label for="nome">Nome Completo *</label>
+            <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
+          </div>
+          <div class="form-group">
+            <label for="empresa">Empresa/Instituição</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Nome da sua empresa (opcional)">
+          </div>
+          <div class="form-group">
+            <label for="telefone">Telefone *</label>
+            <input type="tel" id="telefone" name="telefone" required placeholder="Ex: 944 385 452">
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail *</label>
+            <input type="email" id="email" name="email" required placeholder="seu@email.com">
+          </div>
+          <div class="form-group">
+            <label for="tipo-servico">Tipo de Serviço *</label>
+            <select id="tipo-servico" name="tipo-servico" required>
+              <option value="">Selecione um serviço</option>
+              <option value="Tratamento de Água Doméstica">Tratamento de Água Doméstica</option>
+              <option value="Tratamento de Água Industrial">Tratamento de Água Industrial</option>
+              <option value="Osmose Reversa">Osmose Reversa</option>
+              <option value="Tratamento de Efluentes">Tratamento de Efluentes</option>
+              <option value="Piscinas">Piscinas</option>
+              <option value="Manutenção e Assistência Técnica">Manutenção e Assistência Técnica</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="urgencia">Urgência do Projeto</label>
+            <select id="urgencia" name="urgencia">
+              <option value="">Selecione a urgência</option>
+              <option value="Imediata">Imediata (até 1 semana)</option>
+              <option value="Urgente">Urgente (até 1 mês)</option>
+              <option value="Normal">Normal (até 3 meses)</option>
+              <option value="Planejamento">Planejamento (mais de 3 meses)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="mensagem">Descreva suas Necessidades *</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required placeholder="Descreva detalhadamente suas necessidades, localização do projeto, dimensões aproximadas e qualquer informação relevante para o orçamento"></textarea>
+          </div>
+          <div class="form-group form-checkbox">
+            <label class="checkbox-label">
+              <input type="checkbox" name="newsletter" value="sim">
+              <span class="checkmark"></span>
+              Desejo receber informações sobre novos produtos e serviços da R-Mont
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> Enviar Solicitação
+          </button>
+        </form>
         </div>
       </div>
     </section>
@@ -133,9 +152,10 @@
   </footer>
   <footer>
     <div class="footer-content">
-      <p>&copy; 2024 R-Mont. Todos os direitos reservados.</p>
+      <p style="color: #fff;">&copy; 2024 R-Mont. Todos os direitos reservados.</p>
     </div>
   </footer>
   <script src="js/main.js"></script>
+  <script src="js/contato.js"></script>
 </body>
 </html> 

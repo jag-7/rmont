@@ -680,6 +680,7 @@
 .contato-blocos {
   background: #f8f9fa;
   padding: 0 0 3rem 0;
+  padding-top: 70px;
 }
 .contato-grid {
   display: flex;
@@ -1069,7 +1070,7 @@
       padding: 0 0.5rem;
     }
       .clientes-logo-img {
-    max-width: 75%;
+    max-width: 90%;
   }
   .servicos-grid-home, .servicos-grid {
     flex-direction: column;
@@ -1129,7 +1130,7 @@
       padding: 0 0.3rem;
     }
     .clientes-logo-img {
-      max-width: 85%;
+      max-width: 90%;
     }
   .secao-titulo, .servicos-home h2, .servicos-destaque h2 {
     font-size: 1rem;
@@ -1198,7 +1199,7 @@
     padding: 0 0.2rem;
   }
   .clientes-logo-img {
-    max-width: 85%;
+    max-width: 90%;
   }
   .secao-titulo, .servicos-home h2, .servicos-destaque h2 {
     font-size: 0.85rem;

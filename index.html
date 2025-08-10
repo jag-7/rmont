@@ -44,11 +44,11 @@
         </div>
         <div class="hero-destaques">
           <div class="hero-destaque-item">
-            <div class="hero-destaque-num">20+</div>
+            <div class="hero-destaque-num">5+</div>
             <div class="hero-destaque-txt">Anos de Experiência</div>
           </div>
           <div class="hero-destaque-item">
-            <div class="hero-destaque-num">500+</div>
+            <div class="hero-destaque-num">100+</div>
             <div class="hero-destaque-txt">Projetos Executados</div>
           </div>
           <div class="hero-destaque-item">
@@ -83,10 +83,10 @@
 
   <section class="destaques">
     <div class="destaque-item">
-      <h2>20+ <br>Anos</h2>
+      <h2>5+ <br>Anos</h2>
     </div>
     <div class="destaque-item">
-      <h2>50+<br>Projetos</h2>
+      <h2>100+<br>Projetos</h2>
     </div>
     <div class="destaque-item">
       <h2>24/7<br>Assistência </h2>
@@ -165,7 +165,7 @@
           <span>Unidades Agrícolas</span>
         </div>
       </div>
-      <p class="clientes-cta">Mais de 500 projetos executados com sucesso em todo o território nacional.</p>
+      <p class="clientes-cta">Mais de 100 projetos executados com sucesso em todo o território nacional.</p>
     </div>
   </section>
 
@@ -180,8 +180,8 @@
 
   <section class="cta-final">
     <div class="container">
-      <h2>Pronto para transformar a qualidade da sua água?</h2>
-      <p>Solicite uma visita técnica ou fale agora com um especialista da R-Mont. Nossa equipe está pronta para desenvolver a solução ideal para você!</p>
+      <h2 style="color: #fff;">Pronto para transformar a qualidade da sua água?</h2>
+      <p style="color: #fff;">Solicite uma visita técnica ou fale agora com um especialista da R-Mont. Nossa equipe está pronta para desenvolver a solução ideal para você!</p>
       <div class="cta-final-buttons">
         <a href="#contato" class="btn btn-primary">Solicitar Visita Técnica</a>
         <a href="#contato" class="btn btn-secondary">Falar com Especialista</a>
@@ -233,38 +233,57 @@
         <form class="formulario-contato">
           <div class="form-group">
             <label for="nome">Nome Completo *</label>
-            <input type="text" id="nome" name="nome" required>
+            <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
           </div>
           <div class="form-group">
             <label for="empresa">Empresa/Instituição</label>
-            <input type="text" id="empresa" name="empresa">
+            <input type="text" id="empresa" name="empresa" placeholder="Nome da sua empresa (opcional)">
           </div>
           <div class="form-group">
             <label for="telefone">Telefone *</label>
-            <input type="tel" id="telefone" name="telefone" required>
+            <input type="tel" id="telefone" name="telefone" required placeholder="Ex: 944 385 452">
           </div>
           <div class="form-group">
             <label for="email">E-mail *</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" required placeholder="seu@email.com">
           </div>
           <div class="form-group">
-            <label for="tipo-servico">Tipo de Serviço</label>
+            <label for="tipo-servico">Tipo de Serviço *</label>
             <select id="tipo-servico" name="tipo-servico" required>
               <option value="">Selecione um serviço</option>
-              <option>Tratamento de Água Doméstica</option>
-              <option>Tratamento de Água Industrial</option>
-              <option>Osmose Reversa</option>
-              <option>Tratamento de Efluentes</option>
-              <option>Piscinas</option>
-              <option>Manutenção e Assistência Técnica</option>
-              <option>Outro</option>
+              <option value="Tratamento de Água Doméstica">Tratamento de Água Doméstica</option>
+              <option value="Tratamento de Água Industrial">Tratamento de Água Industrial</option>
+              <option value="Osmose Reversa">Osmose Reversa</option>
+              <option value="Tratamento de Efluentes">Tratamento de Efluentes</option>
+              <option value="Piscinas">Piscinas</option>
+              <option value="Manutenção e Assistência Técnica">Manutenção e Assistência Técnica</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="urgencia">Urgência do Projeto</label>
+            <select id="urgencia" name="urgencia">
+              <option value="">Selecione a urgência</option>
+              <option value="Imediata">Imediata (até 1 semana)</option>
+              <option value="Urgente">Urgente (até 1 mês)</option>
+              <option value="Normal">Normal (até 3 meses)</option>
+              <option value="Planejamento">Planejamento (mais de 3 meses)</option>
             </select>
           </div>
           <div class="form-group">
             <label for="mensagem">Descreva suas Necessidades *</label>
-            <textarea id="mensagem" name="mensagem" rows="4" required placeholder="Descreva detalhadamente suas necessidades, localização do projeto e qualquer informação relevante"></textarea>
+            <textarea id="mensagem" name="mensagem" rows="4" required placeholder="Descreva detalhadamente suas necessidades, localização do projeto, dimensões aproximadas e qualquer informação relevante para o orçamento"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Enviar Solicitação</button>
+          <div class="form-group form-checkbox">
+            <label class="checkbox-label">
+              <input type="checkbox" name="newsletter" value="sim">
+              <span class="checkmark"></span>
+              Desejo receber informações sobre novos produtos e serviços da R-Mont
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> Enviar Solicitação
+          </button>
         </form>
       </div>
     </div>
@@ -281,9 +300,10 @@
   </footer>
   <footer>
     <div class="footer-content">
-      <p>&copy; 2024 R-Mont. Todos os direitos reservados.</p>
+      <p style="color: #fff;">&copy; 2024 R-Mont. Todos os direitos reservados.</p>
     </div>
   </footer>
   <script src="js/main.js"></script>
+  <script src="js/contato.js"></script>
 </body>
 </html> 
