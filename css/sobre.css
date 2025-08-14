@@ -67,7 +67,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 14px 14px 12px 14px;
+  padding: 16px 16px 14px 16px;
   min-width: 0;
   min-height: 80px;
   height: 90px;
@@ -191,14 +191,16 @@
     max-width: 300px;
     height: auto;
     margin: 12px auto 0 auto;
+    margin-bottom: 30px;
   }
   .sobre-title { font-size: 1.5rem; }
   .sobre-desc, .sobre-missao, .sobre-historia-texto p, .sobre-equipe-texto p, .sobre-parcerias-texto p { font-size: 1rem; }
-  .sobre-diferenciais-grid { gap: 10px 8px; grid-template-columns: 1fr 1fr; }
+  .sobre-diferenciais-grid { gap: 16px 12px; grid-template-columns: 1fr 1fr; }
+  .sobre-diferencial-card { padding: 18px 16px 16px 16px; margin-top: 30px;}
   .btn-cta { width: 100%; font-size: 1rem; padding: 0.7rem 0; }
   .desktop-only { display: none !important; }
   .mobile-only { display: block !important; }
-  .sobre-parceiros-box { grid-template-columns: 1fr 1fr; gap: 10px 8px; }
+  .sobre-parceiros-box { grid-template-columns: 1fr 1fr; gap: 16px 12px; }
 }
 
 /* === SEÇÕES PROFISSIONAIS SEPARADAS === */
@@ -493,12 +495,14 @@
     max-width: 220px;
     height: auto;
     margin: 10px auto 0 auto;
+    margin-bottom: 40px;
   }
   .sobre-title { font-size: 1.1rem; }
   .sobre-desc, .sobre-missao, .sobre-historia-texto p, .sobre-equipe-texto p, .sobre-parcerias-texto p { font-size: 0.85rem; }
   .btn-cta { font-size: 0.9rem; padding: 0.5rem 0; }
-  .sobre-diferenciais-grid { grid-template-columns: 1fr 1fr; gap: 6px 4px; }
-  .sobre-parceiros-box { grid-template-columns: 1fr 1fr; gap: 6px 4px; }
+  .sobre-diferenciais-grid { grid-template-columns: 1fr 1fr; gap: 12px 8px; }
+  .sobre-diferencial-card { padding: 16px 14px 14px 14px; margin-top: 40px;}
+  .sobre-parceiros-box { grid-template-columns: 1fr 1fr; gap: 12px 8px; }
 }
 @media (max-width: 320px) {
   .sobre-section {
@@ -520,10 +524,12 @@
     max-width: 120px;
     height: auto;
     margin: 8px auto 0 auto;
+    margin-bottom: 40px;
   }
   .sobre-title { font-size: 0.8rem; }
   .sobre-desc, .sobre-missao, .sobre-historia-texto p, .sobre-equipe-texto p, .sobre-parcerias-texto p { font-size: 0.7rem; }
   .btn-cta { font-size: 0.7rem; padding: 0.3rem 0; }
-  .sobre-diferenciais-grid { grid-template-columns: 1fr 1fr; gap: 2px 2px; }
-  .sobre-parceiros-box { grid-template-columns: 1fr 1fr; gap: 2px 2px; }
+  .sobre-diferenciais-grid { grid-template-columns: 1fr 1fr; gap: 8px 6px; }
+  .sobre-diferencial-card { padding: 14px 12px 12px 12px; margin-top: 40px;}
+  .sobre-parceiros-box { grid-template-columns: 1fr 1fr; gap: 8px 6px; }
 } 
