@@ -9,9 +9,6 @@ class FormularioContato {
     this.formularios.forEach(form => {
       this.configurarFormulario(form);
     });
-    
-    // Verificar se há envios pendentes
-    this.verificarEnviosPendentes();
   }
 
   configurarFormulario(form) {
@@ -29,9 +26,6 @@ class FormularioContato {
     if (telefoneInput) {
       this.aplicarMascaraTelefone(telefoneInput);
     }
-
-    // Verificar se há dados de backup para restaurar
-    this.verificarBackup(form);
   }
 
   aplicarMascaraTelefone(input) {
@@ -142,9 +136,6 @@ class FormularioContato {
 
     const dados = this.coletarDados(form);
     
-    // Salvar dados no localStorage para backup
-    this.salvarDadosBackup(dados);
-    
     // Mostrar loading
     const botaoSubmit = form.querySelector('button[type="submit"]');
     const textoOriginal = botaoSubmit.innerHTML;
@@ -152,20 +143,17 @@ class FormularioContato {
     botaoSubmit.disabled = true;
 
     try {
-      // Simular envio (em produção, aqui seria uma API real)
-      await this.simularEnvio(dados);
-      
-      // Salvar histórico de envios
-      this.salvarHistoricoEnvio(dados);
+      // Simular processamento
+      await new Promise(resolve => setTimeout(resolve, 500));
       
       // Resetar formulário
       form.reset();
       
-      // Mostrar modal com opções de envio
+      // Enviar email diretamente
       this.enviarEmail(dados);
       
     } catch (erro) {
-      this.mostrarNotificacao('Erro ao processar. Tente novamente ou entre em contato diretamente.', 'erro');
+      this.mostrarNotificacao('Erro ao processar. Tente novamente.', 'erro');
     } finally {
       // Restaurar botão
       botaoSubmit.innerHTML = textoOriginal;
@@ -186,390 +174,7 @@ class FormularioContato {
     return dados;
   }
 
-  simularEnvio(dados) {
-    return new Promise((resolve) => {
-      // Simular delay de rede
-      setTimeout(() => {
-        console.log('Dados do formulário processados:', dados);
-        
-        // Salvar dados para possível recuperação
-        try {
-          const envios = JSON.parse(localStorage.getItem('rmont_envios_pendentes') || '[]');
-          envios.push({
-            ...dados,
-            timestamp: new Date().toISOString(),
-            status: 'processado'
-          });
-          
-          // Manter apenas os últimos 5 envios
-          if (envios.length > 5) {
-            envios.splice(0, envios.length - 5);
-          }
-          
-          localStorage.setItem('rmont_envios_pendentes', JSON.stringify(envios));
-        } catch (e) {
-          console.log('Erro ao salvar envio:', e);
-        }
-        
-        resolve();
-      }, 1000);
-    });
-  }
 
-  salvarDadosBackup(dados) {
-    try {
-      localStorage.setItem('rmont_formulario_backup', JSON.stringify({
-        ...dados,
-        timestamp: new Date().toISOString()
-      }));
-    } catch (e) {
-      console.log('Erro ao salvar backup:', e);
-    }
-  }
-
-  salvarHistoricoEnvio(dados) {
-    try {
-      const historico = JSON.parse(localStorage.getItem('rmont_historico_envios') || '[]');
-      historico.unshift({
-        ...dados,
-        timestamp: new Date().toISOString(),
-        status: 'enviado'
-      });
-      
-      // Manter apenas os últimos 10 envios
-      if (historico.length > 10) {
-        historico.splice(10);
-      }
-      
-      localStorage.setItem('rmont_historico_envios', JSON.stringify(historico));
-    } catch (e) {
-      console.log('Erro ao salvar histórico:', e);
-    }
-  }
-
-  carregarDadosBackup() {
-    try {
-      const backup = localStorage.getItem('rmont_formulario_backup');
-      if (backup) {
-        const dados = JSON.parse(backup);
-        // Verificar se o backup é recente (últimas 24h)
-        const backupTime = new Date(dados.timestamp);
-        const agora = new Date();
-        const diffHoras = (agora - backupTime) / (1000 * 60 * 60);
-        
-        if (diffHoras < 24) {
-          return dados;
-        }
-      }
-    } catch (e) {
-      console.log('Erro ao carregar backup:', e);
-    }
-    return null;
-  }
-
-  verificarBackup(form) {
-    const backup = this.carregarDadosBackup();
-    if (backup) {
-      // Aguardar um pouco para o formulário estar completamente carregado
-      setTimeout(() => {
-        this.mostrarOpcaoBackup(form, backup);
-      }, 1000);
-    }
-  }
-
-  verificarEnviosPendentes() {
-    try {
-      const envios = JSON.parse(localStorage.getItem('rmont_envios_pendentes') || '[]');
-      const enviosRecentes = envios.filter(envio => {
-        const envioTime = new Date(envio.timestamp);
-        const agora = new Date();
-        const diffHoras = (agora - envioTime) / (1000 * 60 * 60);
-        return diffHoras < 24; // Últimas 24 horas
-      });
-      
-      if (enviosRecentes.length > 0) {
-        setTimeout(() => {
-          this.mostrarNotificacaoEnviosPendentes(enviosRecentes);
-        }, 2000);
-      }
-    } catch (e) {
-      console.log('Erro ao verificar envios pendentes:', e);
-    }
-  }
-
-  mostrarNotificacaoEnviosPendentes(envios) {
-    const notificacao = document.createElement('div');
-    notificacao.className = 'notificacao notificacao-info';
-    notificacao.innerHTML = `
-      <div class="notificacao-conteudo">
-        <i class="fas fa-info-circle"></i>
-        <span>Você tem ${envios.length} solicitação(ões) recente(s). Deseja visualizar?</span>
-        <div style="margin-top: 0.5rem; display: flex; gap: 0.5rem;">
-          <button class="btn-ver-envios" style="background: #27ae60; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-size: 0.9rem;">Ver Solicitações</button>
-          <button class="btn-ignorar" style="background: #95a5a6; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-size: 0.9rem;">Ignorar</button>
-        </div>
-      </div>
-    `;
-
-    // Estilos da notificação
-    notificacao.style.cssText = `
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 10000;
-      max-width: 400px;
-      background: #3498db;
-      color: white;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
-    `;
-
-    document.body.appendChild(notificacao);
-
-    // Animar entrada
-    setTimeout(() => {
-      notificacao.style.transform = 'translateX(0)';
-    }, 100);
-
-    // Botões de ação
-    notificacao.querySelector('.btn-ver-envios').onclick = () => {
-      this.mostrarHistoricoEnvios(envios);
-      notificacao.remove();
-    };
-
-    notificacao.querySelector('.btn-ignorar').onclick = () => {
-      notificacao.remove();
-    };
-
-    // Auto-remover após 15 segundos
-    setTimeout(() => {
-      if (notificacao.parentNode) {
-        notificacao.remove();
-      }
-    }, 15000);
-  }
-
-  mostrarHistoricoEnvios(envios) {
-    const modal = document.createElement('div');
-    modal.style.cssText = `
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.8);
-      z-index: 10000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Montserrat', sans-serif;
-    `;
-
-    modal.innerHTML = `
-      <div style="
-        background: white;
-        padding: 2rem;
-        border-radius: 12px;
-        max-width: 600px;
-        width: 90%;
-        max-height: 80vh;
-        overflow-y: auto;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      ">
-        <h3 style="color: #0C76D6; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-          <i class="fas fa-history"></i>
-          Histórico de Solicitações Recentes
-        </h3>
-        
-        <div style="margin-bottom: 1.5rem;">
-          ${envios.map((envio, index) => `
-            <div style="
-              border: 1px solid #e9ecef;
-              border-radius: 8px;
-              padding: 1rem;
-              margin-bottom: 1rem;
-              background: #f8f9fa;
-            ">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                <strong style="color: #0C76D6;">Solicitação ${index + 1}</strong>
-                <small style="color: #6c757d;">${new Date(envio.timestamp).toLocaleString('pt-AO')}</small>
-              </div>
-              <div style="font-size: 0.9rem; color: #555;">
-                <div><strong>Nome:</strong> ${envio.nome}</div>
-                ${envio.empresa ? `<div><strong>Empresa:</strong> ${envio.empresa}</div>` : ''}
-                <div><strong>Serviço:</strong> ${envio['tipo-servico']}</div>
-                <div><strong>E-mail:</strong> ${envio.email}</div>
-              </div>
-              <div style="margin-top: 0.5rem;">
-                <button class="btn-reenviar" data-index="${index}" style="
-                  background: #0C76D6;
-                  color: white;
-                  border: none;
-                  padding: 0.5rem 1rem;
-                  border-radius: 4px;
-                  cursor: pointer;
-                  font-size: 0.8rem;
-                  margin-right: 0.5rem;
-                ">Reenviar</button>
-                <button class="btn-copiar" data-index="${index}" style="
-                  background: #6c757d;
-                  color: white;
-                  border: none;
-                  padding: 0.5rem 1rem;
-                  border-radius: 4px;
-                  cursor: pointer;
-                  font-size: 0.8rem;
-                ">Copiar</button>
-              </div>
-            </div>
-          `).join('')}
-        </div>
-        
-        <div style="display: flex; justify-content: flex-end;">
-          <button id="btn-fechar-historico" style="
-            background: #0C76D6;
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-          ">
-            Fechar
-          </button>
-        </div>
-      </div>
-    `;
-
-    document.body.appendChild(modal);
-
-    // Eventos dos botões
-    modal.querySelectorAll('.btn-reenviar').forEach(btn => {
-      btn.onclick = () => {
-        const index = parseInt(btn.getAttribute('data-index'));
-        const envio = envios[index];
-        this.enviarEmail(envio);
-        document.body.removeChild(modal);
-      };
-    });
-
-    modal.querySelectorAll('.btn-copiar').forEach(btn => {
-      btn.onclick = () => {
-        const index = parseInt(btn.getAttribute('data-index'));
-        const envio = envios[index];
-        let corpo = `Solicitação de Orçamento - R-Mont\n\n`;
-        corpo += `Nome: ${envio.nome}\n`;
-        if (envio.empresa) corpo += `Empresa: ${envio.empresa}\n`;
-        corpo += `Telefone: ${envio.telefone}\n`;
-        corpo += `E-mail: ${envio.email}\n`;
-        corpo += `Tipo de Serviço: ${envio['tipo-servico']}\n`;
-        if (envio.urgencia) corpo += `Urgência: ${envio.urgencia}\n`;
-        corpo += `\nMensagem:\n${envio.mensagem}\n\n`;
-        if (envio.newsletter === 'sim') corpo += `Newsletter: Sim\n`;
-        
-        navigator.clipboard.writeText(corpo).then(() => {
-          const originalText = btn.innerHTML;
-          btn.innerHTML = 'Copiado!';
-          btn.style.background = '#27ae60';
-          setTimeout(() => {
-            btn.innerHTML = originalText;
-            btn.style.background = '#6c757d';
-          }, 2000);
-        });
-      };
-    });
-
-    modal.querySelector('#btn-fechar-historico').onclick = () => {
-      document.body.removeChild(modal);
-    };
-
-    // Fechar ao clicar fora
-    modal.onclick = (e) => {
-      if (e.target === modal) {
-        document.body.removeChild(modal);
-      }
-    };
-  }
-
-  mostrarOpcaoBackup(form, backup) {
-    const notificacao = document.createElement('div');
-    notificacao.className = 'notificacao notificacao-info';
-    notificacao.innerHTML = `
-      <div class="notificacao-conteudo">
-        <i class="fas fa-info-circle"></i>
-        <span>Detectamos dados não enviados. Deseja restaurá-los?</span>
-        <div style="margin-top: 0.5rem; display: flex; gap: 0.5rem;">
-          <button class="btn-restaurar" style="background: #27ae60; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-size: 0.9rem;">Restaurar</button>
-          <button class="btn-ignorar" style="background: #95a5a6; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-size: 0.9rem;">Ignorar</button>
-        </div>
-      </div>
-    `;
-
-    // Estilos da notificação
-    notificacao.style.cssText = `
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 10000;
-      max-width: 400px;
-      background: #3498db;
-      color: white;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
-    `;
-
-    document.body.appendChild(notificacao);
-
-    // Animar entrada
-    setTimeout(() => {
-      notificacao.style.transform = 'translateX(0)';
-    }, 100);
-
-    // Botões de ação
-    notificacao.querySelector('.btn-restaurar').onclick = () => {
-      this.restaurarDados(form, backup);
-      notificacao.remove();
-    };
-
-    notificacao.querySelector('.btn-ignorar').onclick = () => {
-      notificacao.remove();
-      // Limpar backup se não quiser restaurar
-      localStorage.removeItem('rmont_formulario_backup');
-    };
-
-    // Auto-remover após 10 segundos
-    setTimeout(() => {
-      if (notificacao.parentNode) {
-        notificacao.remove();
-      }
-    }, 10000);
-  }
-
-  restaurarDados(form, backup) {
-    Object.keys(backup).forEach(key => {
-      if (key !== 'timestamp') {
-        const campo = form.querySelector(`[name="${key}"]`);
-        if (campo) {
-          if (campo.type === 'checkbox') {
-            campo.checked = backup[key] === 'sim';
-          } else {
-            campo.value = backup[key];
-          }
-        }
-      }
-    });
-    
-    this.mostrarNotificacao('Dados restaurados com sucesso!', 'sucesso');
-    
-    // Limpar backup após restaurar
-    localStorage.removeItem('rmont_formulario_backup');
-  }
 
   enviarEmail(dados) {
     let assunto = `Nova Solicitação de Orçamento - ${dados.nome}`;
@@ -585,166 +190,24 @@ class FormularioContato {
     if (dados.newsletter === 'sim') corpo += `Newsletter: Sim\n`;
     corpo += `\nEnviado via formulário do site da R-Mont`;
 
-    // Criar um link temporário e clicar nele para evitar bloqueio de popup
+    // Envio direto via mailto sem popup
+    const mailtoUrl = `mailto:comercial@rmont-business.com?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
+    
+    // Criar link e clicar diretamente
     const link = document.createElement('a');
-    link.href = `mailto:comercial@rmont-business.com?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
+    link.href = mailtoUrl;
     link.style.display = 'none';
     document.body.appendChild(link);
     
-    // Tentar abrir o email de forma mais direta
-    try {
-      link.click();
-      document.body.removeChild(link);
-    } catch (e) {
-      // Se falhar, mostrar instruções manuais
-      this.mostrarInstrucoesEmail(dados, assunto, corpo);
-    }
+    // Clique direto sem window.open
+    link.click();
+    document.body.removeChild(link);
+    
+    // Mostrar confirmação simples
+    this.mostrarNotificacao('Solicitação enviada! Verifique seu cliente de email.', 'sucesso');
   }
 
-  mostrarInstrucoesEmail(dados, assunto, corpo) {
-    const modal = document.createElement('div');
-    modal.style.cssText = `
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.8);
-      z-index: 10000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Montserrat', sans-serif;
-    `;
 
-    modal.innerHTML = `
-      <div style="
-        background: white;
-        padding: 2rem;
-        border-radius: 12px;
-        max-width: 500px;
-        width: 90%;
-        max-height: 80vh;
-        overflow-y: auto;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      ">
-        <h3 style="color: #0C76D6; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-          <i class="fas fa-envelope"></i>
-          Solicitação Enviada com Sucesso!
-        </h3>
-        
-        <p style="margin-bottom: 1rem; color: #555;">
-          Sua solicitação foi processada. Para garantir o recebimento, você pode:
-        </p>
-        
-        <div style="margin-bottom: 1.5rem;">
-          <h4 style="color: #0C76D6; margin-bottom: 0.5rem;">Opção 1: Enviar Email Manualmente</h4>
-          <p style="font-size: 0.9rem; color: #666; margin-bottom: 0.5rem;">
-            Copie as informações abaixo e envie para: <strong>comercial@rmont-business.com</strong>
-          </p>
-          <div style="
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 8px;
-            border-left: 4px solid #0C76D6;
-            font-size: 0.9rem;
-            white-space: pre-line;
-            max-height: 200px;
-            overflow-y: auto;
-          ">${corpo}</div>
-        </div>
-        
-        <div style="margin-bottom: 1.5rem;">
-          <h4 style="color: #0C76D6; margin-bottom: 0.5rem;">Opção 2: WhatsApp</h4>
-          <p style="font-size: 0.9rem; color: #666; margin-bottom: 0.5rem;">
-            Entre em contato direto via WhatsApp:
-          </p>
-          <button id="btn-whatsapp" style="
-            background: #25D366;
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-          ">
-            <i class="fab fa-whatsapp"></i>
-            Enviar via WhatsApp
-          </button>
-        </div>
-        
-        <div style="display: flex; gap: 1rem; justify-content: flex-end;">
-          <button id="btn-copiar" style="
-            background: #6c757d;
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-          ">
-            <i class="fas fa-copy"></i> Copiar Dados
-          </button>
-          <button id="btn-fechar" style="
-            background: #0C76D6;
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-          ">
-            Fechar
-          </button>
-        </div>
-      </div>
-    `;
-
-    document.body.appendChild(modal);
-
-    // Eventos dos botões
-    modal.querySelector('#btn-whatsapp').onclick = () => {
-      let mensagem = `Olá! Gostaria de solicitar orçamento:\n\n`;
-      mensagem += `Nome: ${dados.nome}\n`;
-      if (dados.empresa) mensagem += `Empresa: ${dados.empresa}\n`;
-      mensagem += `Telefone: ${dados.telefone}\n`;
-      mensagem += `E-mail: ${dados.email}\n`;
-      mensagem += `Serviço: ${dados['tipo-servico']}\n`;
-      if (dados.urgencia) mensagem += `Urgência: ${dados.urgencia}\n`;
-      mensagem += `\nMensagem:\n${dados.mensagem}`;
-      
-      const url = `https://wa.me/244944385452?text=${encodeURIComponent(mensagem)}`;
-      window.open(url, '_blank');
-    };
-
-    modal.querySelector('#btn-copiar').onclick = () => {
-      navigator.clipboard.writeText(corpo).then(() => {
-        const btn = modal.querySelector('#btn-copiar');
-        const originalText = btn.innerHTML;
-        btn.innerHTML = '<i class="fas fa-check"></i> Copiado!';
-        btn.style.background = '#27ae60';
-        setTimeout(() => {
-          btn.innerHTML = originalText;
-          btn.style.background = '#6c757d';
-        }, 2000);
-      });
-    };
-
-    modal.querySelector('#btn-fechar').onclick = () => {
-      document.body.removeChild(modal);
-    };
-
-    // Fechar ao clicar fora
-    modal.onclick = (e) => {
-      if (e.target === modal) {
-        document.body.removeChild(modal);
-      }
-    };
-  }
 
   mostrarNotificacao(mensagem, tipo) {
     // Remover notificações anteriores do mesmo tipo
