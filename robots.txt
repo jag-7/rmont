@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://rmont-business.com/sitemap.xml
+
+# Permitir acesso a recursos importantes
+Allow: /css/
+Allow: /js/
+Allow: /imagens/
+Allow: /produtos/
+Allow: /*.pdf
+
+# Bloquear acesso a arquivos desnecessários
+Disallow: /css/*.map
+Disallow: /js/*.map
+
+# Crawl-delay para ser respeitoso com o servidor
+Crawl-delay: 1

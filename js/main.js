@@ -23,77 +23,77 @@ const produtos = [
     nome: 'Sistema de Purificação de Água',
     descricao: 'Sistema completo para purificação de água.',
     categoria: 'equipamentos',
-    imagem: 'produtos/Sistema de purificação de água.jpg'
+    imagem: 'imagens/produtos/Sistema de purificação de água.jpg'
   },
   {
     id: 2,
     nome: 'Sistema de Osmose Reversa Industrial',
     descricao: 'Sistema de osmose reversa para uso industrial e comercial.',
     categoria: 'equipamentos',
-    imagem: 'produtos/Sistema de Osmose Reversa Industrial ou Comercial.jpg'
+    imagem: 'imagens/produtos/Sistema de Osmose Reversa Industrial ou Comercial.jpg'
   },
   {
     id: 3,
     nome: 'Sistema de Osmose Reversa Residencial',
     descricao: 'Sistema de osmose reversa para uso residencial.',
     categoria: 'equipamentos',
-    imagem: 'produtos/Sistema de Osmose Reversa Residencial.jpg'
+    imagem: 'imagens/produtos/Sistema de Osmose Reversa Residencial.jpg'
   },
   {
     id: 4,
     nome: 'Sistema de Filtração Industrial',
     descricao: 'Sistema de filtração para uso industrial.',
     categoria: 'equipamentos',
-    imagem: 'produtos/Sistema de Filtração Industrial..jpg'
+    imagem: 'imagens/produtos/Sistema de Filtração Industrial..jpg'
   },
   {
     id: 5,
     nome: 'Sistema de Filtração de Múltiplos Tanques',
     descricao: 'Sistema de filtração com múltiplos tanques.',
     categoria: 'equipamentos',
-    imagem: 'produtos/Sistema de Filtração de Múltiplos Tanques.jpg'
+    imagem: 'imagens/produtos/Sistema de Filtração de Múltiplos Tanques.jpg'
   },
   {
     id: 6,
     nome: 'Filtro de Água Big Blue 20',
     descricao: 'Filtro de água de alta capacidade.',
     categoria: 'equipamentos',
-    imagem: 'produtos/Filtro de Água Big Blue 20.jpg'
+    imagem: 'imagens/produtos/Filtro de Água Big Blue 20.jpg'
   },
   {
     id: 7,
     nome: 'Filtro de Sedimento',
     descricao: 'Filtro para remoção de partículas sólidas.',
     categoria: 'consumiveis',
-    imagem: 'produtos/FILTRO DE SEDIMENTO.jpg'
+    imagem: 'imagens/produtos/FILTRO DE SEDIMENTO.jpg'
   },
   {
     id: 8,
     nome: 'Hipoclorito de Sódio',
     descricao: 'Desinfetante para tratamento de água.',
     categoria: 'quimicos',
-    imagem: 'produtos/HIPOCLORITO DE SÓDIO.jpg'
+    imagem: 'imagens/produtos/HIPOCLORITO DE SÓDIO.jpg'
   },
   {
     id: 9,
     nome: 'Carvão Ativado',
     descricao: 'Material filtrante para remoção de impurezas e odores.',
     categoria: 'quimicos',
-    imagem: 'produtos/CARVÃO ATIVADO.jpg'
+    imagem: 'imagens/produtos/CARVÃO ATIVADO.jpg'
   },
   {
     id: 10,
     nome: 'Floculante',
     descricao: 'Auxilia na remoção de partículas em suspensão.',
     categoria: 'quimicos',
-    imagem: 'produtos/FLOCULANTE.jpg'
+    imagem: 'imagens/produtos/FLOCULANTE.jpg'
   },
   {
     id: 11,
     nome: 'Resina Catiônica',
     descricao: 'Utilizada em sistemas de abrandamento e desmineralização.',
     categoria: 'quimicos',
-    imagem: 'produtos/RESINA CATEÓNICA.jpg'
+    imagem: 'imagens/produtos/RESINA CATEÓNICA.jpg'
   }
 ];
 
